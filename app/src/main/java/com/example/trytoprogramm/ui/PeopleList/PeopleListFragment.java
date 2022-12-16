@@ -1,4 +1,4 @@
-package com.example.trytoprogramm.ui.gallery;
+package com.example.trytoprogramm.ui.PeopleList;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,22 +13,22 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.trytoprogramm.R;
-import com.example.trytoprogramm.databinding.FragmentListofpeopleBinding;
+import com.example.trytoprogramm.databinding.FragmentPeoplelistBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GalleryFragment extends Fragment {
+public class PeopleListFragment extends Fragment {
 
     ListView peopleListView;
-    private FragmentListofpeopleBinding binding;
+    private FragmentPeoplelistBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        GalleryViewModel galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
+        PeopleListViewModel peopleListViewModel =
+                new ViewModelProvider(this).get(PeopleListViewModel.class);
 
-        binding = FragmentListofpeopleBinding.inflate(inflater, container, false);
+        binding = FragmentPeoplelistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         setUpList();
@@ -54,9 +54,9 @@ public class GalleryFragment extends Fragment {
         people.add("Killian");
         people.add("Mathias");
 
-        peopleListView = (ListView) binding.getRoot().findViewById(R.id.listView);
+        peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
         ArrayAdapter<String> arrayAdapter;
-        arrayAdapter = new ArrayAdapter<String>(this.getActivity(), R.layout.row_item, R.id.textView, people);
+        arrayAdapter = new ArrayAdapter<String>(this.getActivity(), R.layout.fragment_rowitem_peoplelist, R.id.rowitem, people);
         peopleListView.setAdapter(arrayAdapter);
     }
 }

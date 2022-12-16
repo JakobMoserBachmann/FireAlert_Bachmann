@@ -1,16 +1,16 @@
-package com.example.trytoprogramm.ui.home;
+package com.example.trytoprogramm.ui.PeopleList;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class PeopleListViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public PeopleListViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is PeopleList fragment");
     }
 
     public LiveData<String> getText() {

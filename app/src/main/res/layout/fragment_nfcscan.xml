@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.gallery.GalleryFragment">
+    tools:context=".ui.NFC_Scan.NFC_ScanFragment">
 
 
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="410dp"
-        android:layout_height="559dp"
-        android:layout_marginBottom="168dp"
+    <Button
+        android:id="@+id/nfc_scan_button"
+        android:layout_width="139dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="120dp"
+        android:backgroundTint="#F2D600"
+        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

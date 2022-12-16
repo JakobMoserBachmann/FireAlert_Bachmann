@@ -4,18 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.PeopleList.PeopleListFragment">
 
 
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="139dp"
-        android:layout_height="62dp"
-        android:layout_marginBottom="120dp"
-        android:backgroundTint="#F2D600"
-        android:text="Button"
+    <ListView
+        android:id="@+id/peoplelist"
+        android:layout_width="410dp"
+        android:layout_height="559dp"
+        android:layout_marginBottom="168dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

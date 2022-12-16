@@ -1,27 +1,25 @@
-package com.example.trytoprogramm.ui.home;
+package com.example.trytoprogramm.ui.NFC_Scan;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.trytoprogramm.databinding.FragmentNfcScanBinding;
+import com.example.trytoprogramm.databinding.FragmentNfcscanBinding;
 
-public class HomeFragment extends Fragment {
+public class NFC_ScanFragment extends Fragment {
 
-    private FragmentNfcScanBinding binding;
+    private FragmentNfcscanBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        NFC_ScanViewModel NFCScanViewModel =
+                new ViewModelProvider(this).get(NFC_ScanViewModel.class);
 
-        binding = FragmentNfcScanBinding.inflate(inflater, container, false);
+        binding = FragmentNfcscanBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
 

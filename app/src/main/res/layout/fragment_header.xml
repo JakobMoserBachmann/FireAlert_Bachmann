@@ -14,11 +14,11 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imagebox"
         android:layout_width="221dp"
         android:layout_height="132dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@drawable/logo_gray" />
+        app:srcCompat="@drawable/ic_bachmann" />
 
 </LinearLayout>
