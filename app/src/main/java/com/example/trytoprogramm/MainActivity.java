@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     private FragmentSidebarBinding binding;
 
+    private String test;
+
 
 
     @Override
