@@ -4,25 +4,67 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-
+import com.example.trytoprogramm.R;
 import com.example.trytoprogramm.databinding.FragmentNfcscanBinding;
+import cdflynn.android.library.checkview.CheckView;
 
 public class NFC_ScanFragment extends Fragment {
 
     private FragmentNfcscanBinding binding;
+    CheckView check;
+    Button button;
+    ProgressBar progressbar;
+    Boolean startSearch = false;
+    Integer btnCount = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        NFC_ScanViewModel NFCScanViewModel =
-                new ViewModelProvider(this).get(NFC_ScanViewModel.class);
+                             ViewGroup container,Bundle savedInstanceState) {
 
         binding = FragmentNfcscanBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        progressbar = root.findViewById(R.id.progressBar);
 
+        //Loading bar invisible machen
+        progressbar.setVisibility(View. INVISIBLE);
+        //Button finden
+        button = root.findViewById(R.id.nfc_scan_button);
+        //Button text ändern
+        button.setText("Start NFC Scan");
+
+        check = root.findViewById(R.id.check);
+
+
+        //Button on Click
+        button.setOnClickListener(view ->
+        {
+            startSearch = true;
+            btnCount++;
+
+            // wenn btnCount ungerade ist (startwert = 0)
+            if (startSearch && btnCount%2 == 1)
+            {
+                progressbar. setVisibility(View. VISIBLE);
+                button.setText("Stop NFC Scan");
+            }
+            // wenn btnCount gerade ist
+            else if(startSearch && btnCount%2 == 0)
+            {
+                progressbar.setVisibility(View. INVISIBLE);
+                button.setText("Start NFC Scan");
+
+                check.setVisibility(View.VISIBLE);
+                check.check();
+            }
+            else
+            {
+                check.setVisibility(View.INVISIBLE);
+            }
+        });
         return root;
     }
 

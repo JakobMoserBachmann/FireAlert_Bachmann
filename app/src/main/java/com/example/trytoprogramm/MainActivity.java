@@ -3,6 +3,8 @@ package com.example.trytoprogramm;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
+
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
@@ -14,24 +16,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.trytoprogramm.databinding.FragmentSidebarBinding;
 
 
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private FragmentSidebarBinding binding;
-
-    private String test;
-
-
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
+
+
         binding = FragmentSidebarBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.sidebar.toolbar);
+
 
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
@@ -44,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
