@@ -12,17 +12,17 @@
         android:id="@+id/progressBar"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="180dp"
+        android:layout_marginStart="152dp"
         android:layout_marginTop="288dp"
         android:indeterminate="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <cdflynn.android.library.checkview.CheckView
         android:id="@+id/check"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="180dp"
+        android:layout_marginStart="152dp"
         android:layout_marginTop="288dp"
         app:checkView_strokeColor="@color/bachmann_primary"
         app:checkView_strokeWidth="5dp"
@@ -32,12 +32,16 @@
     <Button
         android:id="@+id/nfc_scan_button"
         android:layout_width="300dp"
-        android:layout_height="0dp"
+        android:layout_height="150dp"
         android:layout_marginBottom="120dp"
         android:backgroundTint="#F2D600"
         android:text="Find NFC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check" />
+        app:layout_constraintTop_toBottomOf="@+id/check"
+        app:layout_constraintVertical_bias="1.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

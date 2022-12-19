@@ -10,4 +10,6 @@
     <string name="menu_home">NFC Scan</string>
     <string name="menu_gallery">Missing People</string>
     <string name="menu_slideshow">Slideshow</string>
+
+    <string name="do_string">Missing People</string>
 </resources>
