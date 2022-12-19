@@ -6,15 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.trytoprogramm.R;
 import com.example.trytoprogramm.databinding.FragmentPeoplelistBinding;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +21,6 @@ public class PeopleListFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        PeopleListViewModel peopleListViewModel =
-                new ViewModelProvider(this).get(PeopleListViewModel.class);
 
         binding = FragmentPeoplelistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -41,6 +35,7 @@ public class PeopleListFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
     private void setUpList() {
 
         List<String> people = new ArrayList<>();
@@ -56,7 +51,7 @@ public class PeopleListFragment extends Fragment {
 
         peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
         ArrayAdapter<String> arrayAdapter;
-        arrayAdapter = new ArrayAdapter<String>(this.getActivity(), R.layout.fragment_rowitem_peoplelist, R.id.rowitem, people);
+        arrayAdapter = new ArrayAdapter<>(this.getActivity(), R.layout.fragment_rowitem_peoplelist, R.id.rowitem, people);
         peopleListView.setAdapter(arrayAdapter);
     }
 }

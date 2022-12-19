@@ -2,7 +2,6 @@ package com.example.trytoprogramm;
 
 import android.os.Bundle;
 import android.view.Menu;
-import android.widget.ImageView;
 
 import com.example.trytoprogramm.databinding.FragmentSidebarBinding;
 import com.google.android.material.navigation.NavigationView;
@@ -18,26 +17,21 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private FragmentSidebarBinding binding;
-    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
 
         binding = FragmentSidebarBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.sidebar.toolbar);
 
-
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_nfcScan)
+                R.id.nav_NFCScan, R.id.nav_PeopleList)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
