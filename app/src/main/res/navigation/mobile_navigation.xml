@@ -3,18 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_NFCScan">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_NFCScan"
         android:name="com.example.trytoprogramm.ui.NFC_Scan.NFC_ScanFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_scan"
         tools:layout="@layout/fragment_nfcscan" />
 
     <fragment
-        android:id="@+id/nav_nfcScan"
+        android:id="@+id/nav_PeopleList"
         android:name="com.example.trytoprogramm.ui.PeopleList.PeopleListFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_people"
         tools:layout="@layout/fragment_peoplelist" />
 
 
