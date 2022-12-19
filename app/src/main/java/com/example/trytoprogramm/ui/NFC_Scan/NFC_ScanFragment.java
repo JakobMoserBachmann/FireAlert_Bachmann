@@ -51,6 +51,7 @@ public class NFC_ScanFragment extends Fragment {
             // wenn btnCount ungerade ist (startwert = 0)
             if (btnCount%2 == 1)
             {
+                check.setVisibility(View.INVISIBLE);
                 progressbar. setVisibility(View. VISIBLE);
                 button.setText("Stop NFC Scan");
             }
