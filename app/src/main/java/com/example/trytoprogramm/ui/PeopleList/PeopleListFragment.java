@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -63,16 +65,20 @@ public class PeopleListFragment extends Fragment {
         peopleListView.setAdapter(adapter);
 
         Log.v("test", "HALL");
-        peopleListView.setClickable(true);
+
         peopleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
             public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
-                Log.v("test", "I AM HERE!!!!!!!!!!");
+
+                People item = adapter.getItem(position);
+                Log.v(item.Status.toString(), "I AM HERE1111111111");
+                item.Status = !item.Status;
+                Log.v(item.Status.toString(), "I AM HERE2222222222");
                 adapter.notifyDataSetChanged();
-                Snackbar snackbar = Snackbar.make(view, "Go to Missing", Snackbar.LENGTH_LONG);
-                snackbar.show();
             }
         });
+
 
     }
 }
