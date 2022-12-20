@@ -2,7 +2,7 @@ package com.example.trytoprogramm;
 
 import android.os.Bundle;
 import android.view.Menu;
-
+import android.widget.ImageView;
 import com.example.trytoprogramm.databinding.FragmentSidebarBinding;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
@@ -12,11 +12,11 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
     private FragmentSidebarBinding binding;
+    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -54,6 +53,4 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-
 }

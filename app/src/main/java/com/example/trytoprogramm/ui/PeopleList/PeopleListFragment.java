@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ListView;
@@ -26,6 +27,9 @@ import java.util.List;
 public class PeopleListFragment extends Fragment {
 
     ListView peopleListView;
+    Button button;
+
+
     private FragmentPeoplelistBinding binding;
     private PeopleAdapter adapter;
 
@@ -35,7 +39,15 @@ public class PeopleListFragment extends Fragment {
         binding = FragmentPeoplelistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        button = root.findViewById(R.id.buttonCheckPeople);
+
         setUpList();
+
+        button.setOnClickListener(view ->
+        {
+            Snackbar snackbar = Snackbar.make(view, "Mitarbeiter wurde Abgehakt", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        });
 
         return root;
     }
@@ -76,6 +88,8 @@ public class PeopleListFragment extends Fragment {
                 item.Status = !item.Status;
                 Log.v(item.Status.toString(), "I AM HERE2222222222");
                 adapter.notifyDataSetChanged();
+                Snackbar snackbar = Snackbar.make(view, "Go to Missing", Snackbar.LENGTH_LONG);
+                snackbar.show();
             }
         });
 
