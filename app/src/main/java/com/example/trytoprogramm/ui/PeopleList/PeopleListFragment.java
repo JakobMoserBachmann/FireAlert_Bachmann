@@ -7,23 +7,28 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import com.example.trytoprogramm.R;
 import com.example.trytoprogramm.databinding.FragmentPeoplelistBinding;
 import com.google.android.material.snackbar.Snackbar;
 
+
 import java.lang.reflect.Array;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class PeopleListFragment extends Fragment {
 
     ListView peopleListView;
+    Button button;
+
+
     private FragmentPeoplelistBinding binding;
     private PeopleAdapter adapter;
 
@@ -33,7 +38,15 @@ public class PeopleListFragment extends Fragment {
         binding = FragmentPeoplelistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        button = root.findViewById(R.id.buttonCheckPeople);
+
         setUpList();
+
+        button.setOnClickListener(view ->
+        {
+            Snackbar snackbar = Snackbar.make(view, "Mitarbeiter wurde Abgehakt", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        });
 
         return root;
     }
@@ -47,6 +60,7 @@ public class PeopleListFragment extends Fragment {
     private void setUpList() {
 
 
+
         ArrayList<People> people = new ArrayList<>();
 
         people.add(new People("Jakob", false));
@@ -57,6 +71,7 @@ public class PeopleListFragment extends Fragment {
         people.add(new People("Phillip", false));
         people.add(new People("Killian", false));
         people.add(new People("Mathias", false));
+
 
         peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
         adapter = new PeopleAdapter(people, getContext());

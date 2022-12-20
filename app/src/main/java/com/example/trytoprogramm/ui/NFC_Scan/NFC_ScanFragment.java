@@ -8,9 +8,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.trytoprogramm.R;
 import com.example.trytoprogramm.databinding.FragmentNfcscanBinding;
 import com.google.android.material.snackbar.Snackbar;
@@ -23,6 +21,7 @@ public class NFC_ScanFragment extends Fragment {
     CheckView check;
     Button button;
     ProgressBar progressbar;
+    Boolean startSearch = false;
     Integer btnCount = 0;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -32,30 +31,29 @@ public class NFC_ScanFragment extends Fragment {
         View root = binding.getRoot();
 
         progressbar = root.findViewById(R.id.progressBar);
+
         button = root.findViewById(R.id.nfc_scan_button);
         check = root.findViewById(R.id.check);
 
-        //Loading bar invisible machen
         progressbar.setVisibility(View. INVISIBLE);
 
-        //Button text ändern
         button.setText("Start NFC Scan");
 
-
-        //Button on Click
         button.setOnClickListener(view ->
         {
-
+            startSearch = true;
             btnCount++;
 
-            // wenn btnCount ungerade ist (startwert = 0)
             if (btnCount%2 == 1)
             {
                 check.setVisibility(View.INVISIBLE);
                 progressbar. setVisibility(View. VISIBLE);
+                check.setVisibility(View.INVISIBLE);
+                Snackbar snackbar = Snackbar.make(view, "NFC Scan ist gestartet", Snackbar.LENGTH_LONG);
+                snackbar.show();
+
                 button.setText("Stop NFC Scan");
             }
-            // wenn btnCount gerade ist
             else if(btnCount%2 == 0)
             {
                 progressbar.setVisibility(View. INVISIBLE);
@@ -64,16 +62,18 @@ public class NFC_ScanFragment extends Fragment {
                 check.setVisibility(View.VISIBLE);
                 check.check();
 
-                Snackbar snackbar = Snackbar.make(view,"Go to Missing", Snackbar.LENGTH_LONG);
-                snackbar.setAction(R.string.do_string, new View.OnClickListener() {
+                Snackbar snackbar = Snackbar.make(view, "Info", Snackbar.LENGTH_LONG);
+                snackbar.setAction(R.string.do_string, new View.OnClickListener()
+                {
                     @Override
-                    public void onClick(View view) {
-                        NavHostFragment.findNavController(NFC_ScanFragment.this).navigate(R.id.nav_PeopleList);
+                    public void onClick(View view)
+                    {
+                        NavHostFragment.findNavController(NFC_ScanFragment.this)
+                                .navigate(R.id.nav_PeopleList);
                     }
                 });
                 snackbar.show();
             }
-
         });
         return root;
     }
