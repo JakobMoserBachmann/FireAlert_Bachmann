@@ -5,18 +5,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import com.example.trytoprogramm.R;
 import com.example.trytoprogramm.databinding.FragmentPeoplelistBinding;
+import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PeopleListFragment extends Fragment {
 
     ListView peopleListView;
+    Button button;
+
+
     private FragmentPeoplelistBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -25,7 +29,15 @@ public class PeopleListFragment extends Fragment {
         binding = FragmentPeoplelistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        button = root.findViewById(R.id.buttonCheckPeople);
+
         setUpList();
+
+        button.setOnClickListener(view ->
+        {
+            Snackbar snackbar = Snackbar.make(view, "Mitarbeiter wurde Abgehakt", Snackbar.LENGTH_LONG);
+            snackbar.show();
+        });
 
         return root;
     }
@@ -47,7 +59,7 @@ public class PeopleListFragment extends Fragment {
         people.add("Lukas");
         people.add("Phillip");
         people.add("Killian");
-        people.add("Mathias");
+        people.add("Matthias");
 
         peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
         ArrayAdapter<String> arrayAdapter;
