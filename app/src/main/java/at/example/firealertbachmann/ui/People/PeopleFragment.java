@@ -7,16 +7,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import at.example.firealertbachmann.R;
-
 import at.example.firealertbachmann.databinding.FragmentPeopleBinding;
-
 import com.google.android.material.snackbar.Snackbar;
-
 import java.util.ArrayList;
 
 public class PeopleFragment extends Fragment {

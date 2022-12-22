@@ -1,15 +1,9 @@
 <resources>
     <string name="app_name">FireAlertBachmann</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="menu_nfcscan">NFC Scan</string>
     <string name="menu_peoplelist">Nicht gefunden</string>
-    <string name="menu_scan">NFC Scan</string>
     <string name="menu_people">Missing People</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="do_string">Go to Missing list of People</string>
+    <string name="snackbar_button">Go to Missing list of People</string>
 </resources>

@@ -67,7 +67,7 @@ public class NfcScanFragment extends Fragment {
             {
                 button.setText("Start NFC Scan");
                 ((MainActivity)getActivity()).stopNFC();
-                setCheckGIF();
+                stopGIF();
                 CreateSnackBarButton(view);
             }
         });
@@ -115,18 +115,22 @@ public class NfcScanFragment extends Fragment {
         check.setVisibility(View.INVISIBLE);
         progressbar.setVisibility(View.VISIBLE);
     }
-
     private void setCheckGIF()
     {
         progressbar.setVisibility(View.INVISIBLE);
         check.setVisibility(View.VISIBLE);
         check.check();
     }
+    private void stopGIF()
+    {
+        check.setVisibility(View.INVISIBLE);
+        progressbar.setVisibility(View.INVISIBLE);
+    }
 
     private void CreateSnackBarButton(View view)
     {
         Snackbar snackbar = Snackbar.make(view, "Info", Snackbar.LENGTH_LONG);
-        snackbar.setAction(R.string.do_string, new View.OnClickListener()
+        snackbar.setAction(R.string.snackbar_button, new View.OnClickListener()
         {
             @Override
             public void onClick(View view)

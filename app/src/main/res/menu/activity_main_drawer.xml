@@ -11,7 +11,7 @@
         <item
             android:id="@+id/nav_People"
             android:icon="@drawable/ic_peoplelist"
-            android:title="@string/menu_peoplelist" />
+            android:title="@string/menu_people" />
 
     </group>
 </menu>
