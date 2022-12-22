@@ -33,7 +33,6 @@ public class NfcScanFragment extends Fragment {
     Boolean startSearch = false;
     Integer btnCount = 0;
 
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,Bundle savedInstanceState) {
 
@@ -46,7 +45,6 @@ public class NfcScanFragment extends Fragment {
         check = root.findViewById(R.id.check);
 
         progressbar.setVisibility(View. INVISIBLE);
-
 
         button.setOnClickListener(view ->
         {
@@ -83,7 +81,7 @@ public class NfcScanFragment extends Fragment {
         if (mifareClassic != null) {
             try {
                 mifareClassic.connect();
-                mifareClassic.authenticateSectorWithKeyA(4, new byte[]{0x6d, 0x4b, 0x00, 0x00, 0x01, 0x43});
+                //mifareClassic.authenticateSectorWithKeyA(4, new byte[]{0x6d, 0x4b, 0x00, 0x00, 0x01, 0x43});
                 byte[] bytes = mifareClassic.readBlock(16);
 
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
@@ -103,7 +101,6 @@ public class NfcScanFragment extends Fragment {
             }
         };
         handler.sendEmptyMessageDelayed(1, 1000);
-
 
     } else  {
             // kein MIFARE Classic NFC Tag
