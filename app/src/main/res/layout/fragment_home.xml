@@ -29,8 +29,8 @@
 
     <Button
         android:id="@+id/nfc_scan_button"
-        android:layout_width="300dp"
-        android:layout_height="150dp"
+        android:layout_width="200dp"
+        android:layout_height="105dp"
         android:layout_marginBottom="120dp"
         android:backgroundTint="#F2D600"
         android:text="Find NFC"

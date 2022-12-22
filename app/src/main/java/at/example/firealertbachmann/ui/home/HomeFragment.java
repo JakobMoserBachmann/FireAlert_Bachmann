@@ -6,9 +6,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toolbar;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentHomeBinding;
@@ -17,20 +25,23 @@ import cdflynn.android.library.checkview.CheckView;
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
+    private AppBarConfiguration mAppBarConfiguration;
     CheckView check;
     Button button;
     ProgressBar progressbar;
     Boolean startSearch = false;
     Integer btnCount = 0;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,Bundle savedInstanceState) {
+
+
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         progressbar = root.findViewById(R.id.progressBar);
-
         button = root.findViewById(R.id.nfc_scan_button);
         check = root.findViewById(R.id.check);
 
@@ -68,7 +79,7 @@ public class HomeFragment extends Fragment {
                     public void onClick(View view)
                     {
                         NavHostFragment.findNavController(HomeFragment.this)
-                                .navigate(R.id.nav_slideshow);
+                                .navigate(R.id.nav_gallery);
                     }
                 });
                 snackbar.show();
@@ -76,6 +87,8 @@ public class HomeFragment extends Fragment {
         });
         return root;
     }
+
+
 
     @Override
     public void onDestroyView() {
