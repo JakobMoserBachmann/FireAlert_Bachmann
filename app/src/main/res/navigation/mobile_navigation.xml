@@ -8,13 +8,13 @@
     <fragment
         android:id="@+id/nav_NfcScanFragment"
         android:name="at.example.firealertbachmann.ui.NfcScan.NfcScanFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_nfcscan"
         tools:layout="@layout/fragment_nfcscan" />
 
     <fragment
         android:id="@+id/nav_People"
         android:name="at.example.firealertbachmann.ui.People.PeopleFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_peoplelist"
         tools:layout="@layout/fragment_people" />
 
 
