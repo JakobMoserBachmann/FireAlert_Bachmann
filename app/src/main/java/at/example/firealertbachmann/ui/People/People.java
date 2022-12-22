@@ -1,4 +1,4 @@
-package at.example.firealertbachmann.ui.gallery;
+package at.example.firealertbachmann.ui.People;
 
 public class People
 {

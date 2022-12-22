@@ -1,4 +1,4 @@
-package at.example.firealertbachmann.ui.gallery;
+package at.example.firealertbachmann.ui.People;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -22,7 +22,7 @@ public class PeopleAdapter extends ArrayAdapter {
     Context mContext;
 
     public PeopleAdapter(ArrayList<People> dataSet, @NonNull Context context) {
-        super(context, R.layout.fragment_gallery_listitem, dataSet);
+        super(context, R.layout.fragment_people_listitem, dataSet);
         this.dataSet = dataSet;
         this.mContext = context;
     }
@@ -50,7 +50,7 @@ public class PeopleAdapter extends ArrayAdapter {
         View result;
         if (convertView == null) {
             viewHolder = new ViewHolder();
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_gallery_listitem, parent, false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_people_listitem, parent, false);
             viewHolder.txtName = convertView.findViewById(R.id.rowitem);
             viewHolder.checkBox = convertView.findViewById(R.id.checkBox);
             result = convertView;

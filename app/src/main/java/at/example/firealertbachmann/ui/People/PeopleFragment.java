@@ -1,45 +1,37 @@
-package at.example.firealertbachmann.ui.gallery;
+package at.example.firealertbachmann.ui.People;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import at.example.firealertbachmann.R;
-import at.example.firealertbachmann.databinding.FragmentGalleryBinding;
-import at.example.firealertbachmann.ui.gallery.People;
-import at.example.firealertbachmann.ui.gallery.PeopleAdapter;
+
+import at.example.firealertbachmann.databinding.FragmentPeopleBinding;
 
 import com.google.android.material.snackbar.Snackbar;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
-public class GalleryFragment extends Fragment {
+public class PeopleFragment extends Fragment {
 
     ListView peopleListView;
     Button button;
 
 
-    private FragmentGalleryBinding binding;
+    private FragmentPeopleBinding binding;
     private PeopleAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentPeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         button = root.findViewById(R.id.buttonCheckPeople);

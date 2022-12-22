@@ -1,4 +1,4 @@
-package at.example.firealertbachmann.ui.home;
+package at.example.firealertbachmann.ui.NfcScan;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,25 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.snackbar.Snackbar;
 import at.example.firealertbachmann.R;
-import at.example.firealertbachmann.databinding.FragmentHomeBinding;
+import at.example.firealertbachmann.databinding.FragmentNfcscanBinding;
 import cdflynn.android.library.checkview.CheckView;
 
-public class HomeFragment extends Fragment {
+public class NfcScanFragment extends Fragment {
 
-    private FragmentHomeBinding binding;
+    private FragmentNfcscanBinding binding;
     private AppBarConfiguration mAppBarConfiguration;
     CheckView check;
     Button button;
@@ -38,7 +33,7 @@ public class HomeFragment extends Fragment {
 
 
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentNfcscanBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         progressbar = root.findViewById(R.id.progressBar);
@@ -78,8 +73,8 @@ public class HomeFragment extends Fragment {
                     @Override
                     public void onClick(View view)
                     {
-                        NavHostFragment.findNavController(HomeFragment.this)
-                                .navigate(R.id.nav_gallery);
+                        NavHostFragment.findNavController(NfcScanFragment.this)
+                                .navigate(R.id.nav_People);
                     }
                 });
                 snackbar.show();
