@@ -8,12 +8,9 @@ import android.nfc.tech.MifareClassic;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
-import android.widget.ImageView;
 import at.example.firealertbachmann.databinding.ActivityMainBinding;
 import at.example.firealertbachmann.ui.NfcScan.NfcScanFragment;
-
 import com.google.android.material.navigation.NavigationView;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
@@ -53,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
         if (nfcAdapter != null) {
@@ -65,8 +61,10 @@ public class MainActivity extends AppCompatActivity {
             IntentFilter filter = new IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED);
             techListsArray = new String[][]{new String[]{MifareClassic.class.getName()}};
             intentFiltersArray = new IntentFilter[]{filter};
-        } else {
-            // Handy unterstützt kein NFC
+        }
+        else
+        {
+
         }
     }
 
@@ -76,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
 
     @Override
     protected void onNewIntent(Intent intent) {
@@ -88,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Check if the fragment is an instance of the right fragment
         if (fragment instanceof NfcScanFragment) {
-            Log.v("HELLO", "HALLLLLLLOOOOOOOO");
+            Log.v("HELLO", "Hello");
 
             NfcScanFragment my = (NfcScanFragment) fragment;
             // Pass intent or its data to the fragment's method
@@ -96,9 +93,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-
             Log.v("HELLO",  "##########");
-
         }
     }
 

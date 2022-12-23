@@ -26,6 +26,7 @@ import cdflynn.android.library.checkview.CheckView;
 
 public class NfcScanFragment extends Fragment {
 
+    // Variables
     private FragmentNfcscanBinding binding;
     CheckView check;
     Button button;
@@ -39,32 +40,39 @@ public class NfcScanFragment extends Fragment {
         binding = FragmentNfcscanBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        // finding the right Components the by Id
         progressbar = root.findViewById(R.id.progressBar);
-
         button = root.findViewById(R.id.nfc_scan_button);
         check = root.findViewById(R.id.check);
 
+        // setting Visibility from progressbar to invisible
         progressbar.setVisibility(View. INVISIBLE);
 
+        // when button is clicked
         button.setOnClickListener(view ->
         {
             startSearch = true;
             btnCount++;
 
+            // if Button count is odd number
             if (btnCount%2 == 1)
             {
+                // setting Button Text
                 button.setText("Stop NFC Scan");
                 ((MainActivity)getActivity()).startNFC();
                 setProgressGIF();
 
-                //Snackbar erstellen
+                // create Snackbar
                 Snackbar snackbar = Snackbar.make(view, "NFC Scan ist gestartet", Snackbar.LENGTH_LONG);
                 snackbar.show();
+
             }
+            // if Button count is right number
             else if(btnCount%2 == 0)
             {
                 button.setText("Start NFC Scan");
                 ((MainActivity)getActivity()).stopNFC();
+
                 stopGIF();
                 CreateSnackBarButton(view);
             }
@@ -72,9 +80,8 @@ public class NfcScanFragment extends Fragment {
         return root;
     }
 
-
     public void processNFC(Intent intent) {
-        Log.v("HALLO", "''#############");
+
         Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
         MifareClassic mifareClassic = MifareClassic.get(tagFromIntent);
@@ -86,12 +93,16 @@ public class NfcScanFragment extends Fragment {
 
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
 
-                String KeyNumberShort = keyNumber.substring(keyNumber.length() - 6);
+                String lastSixNumbers = keyNumber.substring(keyNumber.length() - 6);
+                Log.v("NFC TAG -------------->", lastSixNumbers);
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
             setCheckGIF();
+
             //GIF Timer
             Handler handler = new Handler(Looper.getMainLooper()) {
             @Override

@@ -11,6 +11,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentPeopleBinding;
+import at.example.firealertbachmann.ui.NfcScan.NfcScanFragment;
+
 import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
@@ -18,7 +20,6 @@ public class PeopleFragment extends Fragment {
 
     ListView peopleListView;
     Button button;
-
 
     private FragmentPeopleBinding binding;
     private PeopleAdapter adapter;
@@ -50,7 +51,6 @@ public class PeopleFragment extends Fragment {
 
     private void setUpList() {
 
-
         ArrayList<People> people = new ArrayList<>();
 
         people.add(new People("Jakob", false));
@@ -78,7 +78,5 @@ public class PeopleFragment extends Fragment {
                 adapter.notifyDataSetChanged();
             }
         });
-
-
     }
 }
