@@ -85,12 +85,13 @@ public class NfcScanFragment extends Fragment {
                 byte[] bytes = mifareClassic.readBlock(16);
 
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
+
+                String KeyNumberShort = keyNumber.substring(keyNumber.length() - 6);
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
             setCheckGIF();
-
             //GIF Timer
             Handler handler = new Handler(Looper.getMainLooper()) {
             @Override
