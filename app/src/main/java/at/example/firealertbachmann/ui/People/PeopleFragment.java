@@ -32,13 +32,23 @@ public class PeopleFragment extends Fragment {
 
         button = root.findViewById(R.id.buttonCheckPeople);
 
-        setUpList();
+        ArrayList<People> peopleList = setUpList();
+
+
 
         button.setOnClickListener(view ->
         {
-            Snackbar snackbar = Snackbar.make(view, "Mitarbeiter wurde Abgehakt", Snackbar.LENGTH_LONG);
-            snackbar.show();
+            for (People people: peopleList)
+            {
+                if (people.Status == Boolean.TRUE)
+                {
+                    people.Status = Boolean.FALSE;
+                }
+            }
+
+            adapter.notifyDataSetChanged();
         });
+
         return root;
     }
 
@@ -48,22 +58,23 @@ public class PeopleFragment extends Fragment {
         binding = null;
     }
 
-    private void setUpList() {
+    private ArrayList<People> setUpList() {
 
-        ArrayList<People> people = new ArrayList<>();
+        ArrayList<People> peopleList = new ArrayList<>();
 
-        people.add(new People("Jakob", false));
-        people.add(new People("Jonas", false));
-        people.add(new People("Marc", false));
-        people.add(new People("Martin", false));
-        people.add(new People("Lukas", false));
-        people.add(new People("Phillip", false));
-        people.add(new People("Killian", false));
-        people.add(new People("Mathias", false));
+        peopleList.add(new People("Jakob", false));
+        peopleList.add(new People("Jonas", false));
+        peopleList.add(new People("Marc", false));
+        peopleList.add(new People("Martin", false));
+        peopleList.add(new People("Lukas", false));
+        peopleList.add(new People("Phillip", false));
+        peopleList.add(new People("Killian", false));
+        peopleList.add(new People("Mathias", false));
 
         peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
-        adapter = new PeopleAdapter(people, getContext());
+        adapter = new PeopleAdapter(peopleList, getContext());
         peopleListView.setAdapter(adapter);
+
 
         peopleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -77,5 +88,6 @@ public class PeopleFragment extends Fragment {
                 adapter.notifyDataSetChanged();
             }
         });
+        return peopleList;
     }
 }
