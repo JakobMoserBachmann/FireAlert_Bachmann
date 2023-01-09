@@ -11,8 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentPeopleBinding;
-import at.example.firealertbachmann.ui.NfcScan.NfcScanFragment;
-
 import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
@@ -23,22 +21,30 @@ public class PeopleFragment extends Fragment {
 
     private FragmentPeopleBinding binding;
     private PeopleAdapter adapter;
+    PeopleListService peopleService = PeopleListService.getInstance();
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
+
+        peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
+        adapter = new PeopleAdapter(peopleService.getMissingPeople(), getContext());
+        peopleListView.setAdapter(adapter);
+
 
         binding = FragmentPeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
         button = root.findViewById(R.id.buttonCheckPeople);
 
-        ArrayList<People> peopleList = setUpList();
+
 
 
 
         button.setOnClickListener(view ->
         {
-            for (People people: peopleList)
+            for (People people: peopleService.getMissingPeople())
             {
                 if (people.Status == Boolean.TRUE)
                 {
@@ -49,31 +55,6 @@ public class PeopleFragment extends Fragment {
             adapter.notifyDataSetChanged();
         });
 
-        return root;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
-    }
-
-    private ArrayList<People> setUpList() {
-
-        ArrayList<People> peopleList = new ArrayList<>();
-
-        peopleList.add(new People("Jakob", false));
-        peopleList.add(new People("Jonas", false));
-        peopleList.add(new People("Marc", false));
-        peopleList.add(new People("Martin", false));
-        peopleList.add(new People("Lukas", false));
-        peopleList.add(new People("Phillip", false));
-        peopleList.add(new People("Killian", false));
-        peopleList.add(new People("Mathias", false));
-
-        peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
-        adapter = new PeopleAdapter(peopleList, getContext());
-        peopleListView.setAdapter(adapter);
 
 
         peopleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -88,6 +69,19 @@ public class PeopleFragment extends Fragment {
                 adapter.notifyDataSetChanged();
             }
         });
-        return peopleList;
+
+        return root;
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
+
+
+
+
+
+
 }

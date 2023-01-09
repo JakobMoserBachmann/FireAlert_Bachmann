@@ -89,6 +89,7 @@ public class NfcScanFragment extends Fragment {
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
 
                 String KeyNumberShort = keyNumber.substring(keyNumber.length() - 6);
+                Log.v("KeyNumber", KeyNumberShort.toString());
             } catch (IOException e) {
                 e.printStackTrace();
             }
