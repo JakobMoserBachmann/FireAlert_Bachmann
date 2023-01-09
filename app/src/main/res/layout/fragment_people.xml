@@ -23,9 +23,8 @@
         android:layout_marginEnd="108dp"
         android:layout_marginBottom="28dp"
         android:backgroundTint="#F2D600"
+        android:onClick="CheckButtonOnClick"
         android:text="abhaken"
-
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-       />
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
