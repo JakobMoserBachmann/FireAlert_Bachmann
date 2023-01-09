@@ -39,7 +39,6 @@ public class PeopleFragment extends Fragment {
             Snackbar snackbar = Snackbar.make(view, "Mitarbeiter wurde Abgehakt", Snackbar.LENGTH_LONG);
             snackbar.show();
         });
-
         return root;
     }
 

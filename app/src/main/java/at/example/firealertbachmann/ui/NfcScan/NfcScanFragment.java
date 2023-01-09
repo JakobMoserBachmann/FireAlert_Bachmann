@@ -65,7 +65,6 @@ public class NfcScanFragment extends Fragment {
                 // create Snackbar
                 Snackbar snackbar = Snackbar.make(view, "NFC Scan ist gestartet", Snackbar.LENGTH_LONG);
                 snackbar.show();
-
             }
             // if Button count is right number
             else if(btnCount%2 == 0)
@@ -88,14 +87,13 @@ public class NfcScanFragment extends Fragment {
         if (mifareClassic != null) {
             try {
                 mifareClassic.connect();
-                //mifareClassic.authenticateSectorWithKeyA(4, new byte[]{0x6d, 0x4b, 0x00, 0x00, 0x01, 0x43});
+                // mifareClassic.authenticateSectorWithKeyA(4, new byte[]{0x6d, 0x4b, 0x00, 0x00, 0x01, 0x43});
                 byte[] bytes = mifareClassic.readBlock(16);
 
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
-
+                // Cutting keyNumber to the resent 6 last numbers
                 String lastSixNumbers = keyNumber.substring(keyNumber.length() - 6);
                 Log.v("NFC TAG -------------->", lastSixNumbers);
-
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -124,12 +122,14 @@ public class NfcScanFragment extends Fragment {
         check.setVisibility(View.INVISIBLE);
         progressbar.setVisibility(View.VISIBLE);
     }
+
     private void setCheckGIF()
     {
         progressbar.setVisibility(View.INVISIBLE);
         check.setVisibility(View.VISIBLE);
         check.check();
     }
+
     private void stopGIF()
     {
         check.setVisibility(View.INVISIBLE);
