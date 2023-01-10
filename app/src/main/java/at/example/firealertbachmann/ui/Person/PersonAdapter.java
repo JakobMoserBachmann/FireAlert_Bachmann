@@ -1,4 +1,4 @@
-package at.example.firealertbachmann.ui.People;
+package at.example.firealertbachmann.ui.Person;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,12 +12,12 @@ import androidx.annotation.Nullable;
 import at.example.firealertbachmann.R;
 import java.util.ArrayList;
 
-public class PeopleAdapter extends ArrayAdapter {
+public class PersonAdapter extends ArrayAdapter {
 
-    ArrayList<People> dataSet;
+    ArrayList<Person> dataSet;
     Context mContext;
 
-    public PeopleAdapter(ArrayList<People> dataSet, @NonNull Context context) {
+    public PersonAdapter(ArrayList<Person> dataSet, @NonNull Context context) {
         super(context, R.layout.fragment_people_listitem, dataSet);
         this.dataSet = dataSet;
         this.mContext = context;
@@ -35,7 +35,7 @@ public class PeopleAdapter extends ArrayAdapter {
 
     @Nullable
     @Override
-    public People getItem(int position) {
+    public Person getItem(int position) {
         return dataSet.get(position);
     }
 
@@ -56,9 +56,9 @@ public class PeopleAdapter extends ArrayAdapter {
             result = convertView;
         }
 
-        People item = getItem(position);
+        Person item = getItem(position);
         viewHolder.txtName.setText(item.Name);
-        viewHolder.checkBox.setChecked(item.Status);
+        viewHolder.checkBox.setChecked(item.IsFound);
         return result;
     }
 }
