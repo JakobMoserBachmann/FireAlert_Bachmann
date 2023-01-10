@@ -1,7 +1,8 @@
 package at.example.firealertbachmann.ui.Person;
 
+import android.os.Build;
 import android.util.Log;
-
+import androidx.annotation.RequiresApi;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -26,16 +27,19 @@ public class PersonListService {
         return instance;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public List<Person> getFoundPeople()
     {
         return people.stream().filter(person -> person.IsFound == true).collect(Collectors.toList());
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public List<Person> getMissingPeople()
     {
         return people.stream().filter(person -> person.IsFound == false).collect(Collectors.toList());
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void FoundPerson(Person person)
     {
         for (Person people:people)
@@ -60,7 +64,6 @@ public class PersonListService {
 
     public Person GetPersonByKeyNumber(String KeyNumber)
     {
-
         for (Person people:people)
         {
             if (people.KeyNumber.equals(KeyNumber))
@@ -70,6 +73,4 @@ public class PersonListService {
         }
         return null;
     }
-
-
 }

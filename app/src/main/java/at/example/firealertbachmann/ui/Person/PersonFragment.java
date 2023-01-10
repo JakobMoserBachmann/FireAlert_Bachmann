@@ -46,7 +46,6 @@ public class PersonFragment extends Fragment {
             }
         });
 
-
         button.setOnClickListener(view ->
         {
             for (Person people: peopleListService.getAllPeople())
@@ -57,7 +56,6 @@ public class PersonFragment extends Fragment {
                     people.IsFound = Boolean.FALSE;
                 }
             }
-
             adapter.notifyDataSetChanged();
         });
 
@@ -69,9 +67,4 @@ public class PersonFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-
-
-
-
 }
