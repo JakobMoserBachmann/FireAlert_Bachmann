@@ -46,7 +46,6 @@ public class PersonFragment extends Fragment {
             }
         });
 
-
         button.setOnClickListener(view ->
         {
             for (Person person: peopleListService.getMissingPeople())
@@ -58,7 +57,9 @@ public class PersonFragment extends Fragment {
                 }
             }
 
+
             CreateListView();
+
 
         });
 
@@ -79,9 +80,4 @@ public class PersonFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-
-
-
-
 }

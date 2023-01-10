@@ -22,7 +22,6 @@ import java.io.IOException;
 import at.example.firealertbachmann.MainActivity;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentNfcscanBinding;
-import at.example.firealertbachmann.ui.Person.Person;
 import at.example.firealertbachmann.ui.Person.PersonListService;
 import cdflynn.android.library.checkview.CheckView;
 
@@ -36,7 +35,6 @@ public class NfcScanFragment extends Fragment {
     Boolean startSearch = false;
     Integer btnCount = 0;
 
-
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,Bundle savedInstanceState) {
 
@@ -49,7 +47,6 @@ public class NfcScanFragment extends Fragment {
         check = root.findViewById(R.id.check);
 
         progressbar.setVisibility(View. INVISIBLE);
-
 
         button.setOnClickListener(view ->
         {
@@ -77,7 +74,6 @@ public class NfcScanFragment extends Fragment {
         return root;
     }
 
-
     public void processNFC(Intent intent) {
 
         Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
@@ -93,11 +89,10 @@ public class NfcScanFragment extends Fragment {
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
 
                 String KeyNumberShort = keyNumber.substring(keyNumber.length() - 6);
-                Log.v("KeyNumber", KeyNumberShort);
+                Log.v("KeyNumber---------->", KeyNumberShort);
 
                 //Add Scanned Person to Found People
                 peopleListService.FoundPerson(peopleListService.GetPersonByKeyNumber(KeyNumberShort));
-
 
             } catch (IOException e) {
                 e.printStackTrace();
