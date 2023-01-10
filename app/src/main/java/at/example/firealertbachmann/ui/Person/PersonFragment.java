@@ -30,8 +30,7 @@ public class PersonFragment extends Fragment {
         binding = FragmentPeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         button = root.findViewById(R.id.buttonCheckPeople);
-
-        CreateListView();
+       CreateListView();
 
         peopleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 

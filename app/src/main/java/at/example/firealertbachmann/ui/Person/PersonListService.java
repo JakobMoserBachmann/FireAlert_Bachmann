@@ -50,8 +50,19 @@ public class PersonListService {
     //Sets the Person to found
     public void FoundPerson(Person person)
     {
+        for (Person people:people)
+        {
+            Log.v("GETALL", people.Name);
+        }
+        for (Person people:getMissingPeople())
+        {
+            Log.v("GETMISSING", people.Name);
+        }
         person.IsFound = true;
-    }
+        for (Person people:getFoundPeople())
+        {
+            Log.v("GETFOUND", people.Name);
+        }    }
 
     //Gets all People
     public ArrayList<Person> getAllPeople()
