@@ -8,7 +8,7 @@ public class PersonListAdd {
     {
         peopleList.add(new Person("JAMO", false, "000763"));
         peopleList.add(new Person("MCSA", false, "000765"));
-        peopleList.add(new Person("MASB", false, "000420"));
+        peopleList.add(new Person("MASB", false, "000606"));
         peopleList.add(new Person("TEST1", false, "000101"));
         peopleList.add(new Person("TEST2", false, "000102"));
         peopleList.add(new Person("TEST3", false, "000103"));
