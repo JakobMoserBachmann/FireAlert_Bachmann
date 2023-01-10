@@ -27,41 +27,49 @@ public class PersonListService {
         return instance;
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
+    //Gets all Found People
+
     public List<Person> getFoundPeople()
     {
         return people.stream().filter(person -> person.IsFound == true).collect(Collectors.toList());
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
+    //Gets all Missing People
+
+
     public List<Person> getMissingPeople()
     {
         return people.stream().filter(person -> person.IsFound == false).collect(Collectors.toList());
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
+
+    //Resets all People to Missing Only to Test
+    public void SetBackPeople()
+
     public void FoundPerson(Person person)
+
     {
-        for (Person people:people)
+        for (Person person:getFoundPeople())
         {
-            Log.v("GETALL", people.Name);
-        }
-        for (Person people:getMissingPeople())
-        {
-            Log.v("GETMISSING", people.Name);
-        }
-        person.IsFound = true;
-        for (Person people:getFoundPeople())
-        {
-            Log.v("GETFOUND", people.Name);
+            person.IsFound = false;
         }
     }
 
+    //Sets the Person to found
+    public void FoundPerson(Person person)
+    {
+        person.IsFound = true;
+    }
+
+    //Gets all People
     public ArrayList<Person> getAllPeople()
     {
         return this.people;
     }
 
+    //Gets one specific Person filtered by the Key number
     public Person GetPersonByKeyNumber(String KeyNumber)
     {
         for (Person people:people)
