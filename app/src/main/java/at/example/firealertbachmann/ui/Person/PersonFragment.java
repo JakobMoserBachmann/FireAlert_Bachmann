@@ -1,6 +1,7 @@
 package at.example.firealertbachmann.ui.Person;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import java.util.ArrayList;
+
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentPeopleBinding;
 
@@ -26,12 +30,8 @@ public class PersonFragment extends Fragment {
         binding = FragmentPeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         button = root.findViewById(R.id.buttonCheckPeople);
-        peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
 
-        adapter = new PersonAdapter(peopleListService.getAllPeople(), getContext());
-        peopleListView.setAdapter(adapter);
-
-        adapter.notifyDataSetChanged();
+        CreateListView();
 
         peopleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -49,19 +49,29 @@ public class PersonFragment extends Fragment {
 
         button.setOnClickListener(view ->
         {
-            for (Person people: peopleListService.getAllPeople())
+            for (Person person: peopleListService.getMissingPeople())
             {
-                if (people.IsFound == Boolean.TRUE)
+                if (person.IsFound == Boolean.TRUE)
                 {
 
-                    people.IsFound = Boolean.FALSE;
+                    peopleListService.FoundPerson(person);
                 }
             }
 
-            adapter.notifyDataSetChanged();
+            CreateListView();
+
         });
 
         return root;
+    }
+    public void CreateListView()
+    {
+        peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
+
+        adapter = new PersonAdapter((ArrayList<Person>) peopleListService.getMissingPeople(), getContext());
+        peopleListView.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
     }
 
     @Override
