@@ -22,10 +22,13 @@ import java.io.IOException;
 import at.example.firealertbachmann.MainActivity;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentNfcscanBinding;
+import at.example.firealertbachmann.ui.Person.Person;
+import at.example.firealertbachmann.ui.Person.PersonListService;
 import cdflynn.android.library.checkview.CheckView;
 
 public class NfcScanFragment extends Fragment {
 
+    PersonListService peopleListService = PersonListService.getInstance();
     private FragmentNfcscanBinding binding;
     CheckView check;
     Button button;
@@ -76,10 +79,11 @@ public class NfcScanFragment extends Fragment {
 
 
     public void processNFC(Intent intent) {
-        Log.v("HALLO", "''#############");
+
         Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
         MifareClassic mifareClassic = MifareClassic.get(tagFromIntent);
+
         if (mifareClassic != null) {
             try {
                 mifareClassic.connect();
@@ -89,12 +93,19 @@ public class NfcScanFragment extends Fragment {
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
 
                 String KeyNumberShort = keyNumber.substring(keyNumber.length() - 6);
-                Log.v("KeyNumber", KeyNumberShort.toString());
+                Log.v("KeyNumber", KeyNumberShort);
+
+                //Add Scanned Person to Found People
+                peopleListService.FoundPerson(peopleListService.GetPersonByKeyNumber(KeyNumberShort));
+
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
 
+            //NFC FOUND
             setCheckGIF();
+
             //GIF Timer
             Handler handler = new Handler(Looper.getMainLooper()) {
             @Override
