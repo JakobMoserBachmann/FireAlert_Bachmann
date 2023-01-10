@@ -56,10 +56,7 @@ public class PersonFragment extends Fragment {
                 }
             }
 
-
             CreateListView();
-
-
         });
 
         return root;
