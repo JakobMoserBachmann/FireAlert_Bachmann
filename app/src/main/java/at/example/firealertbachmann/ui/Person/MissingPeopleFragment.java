@@ -1,7 +1,6 @@
 package at.example.firealertbachmann.ui.Person;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentPeopleBinding;
 
-public class PersonFragment extends Fragment {
+public class MissingPeopleFragment extends Fragment {
 
     ListView peopleListView;
     Button button;

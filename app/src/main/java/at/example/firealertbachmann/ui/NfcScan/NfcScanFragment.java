@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.MifareClassic;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.snackbar.Snackbar;
@@ -74,6 +76,7 @@ public class NfcScanFragment extends Fragment {
         return root;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void processNFC(Intent intent) {
 
         Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
@@ -144,7 +147,7 @@ public class NfcScanFragment extends Fragment {
             public void onClick(View view)
             {
                 NavHostFragment.findNavController(NfcScanFragment.this)
-                        .navigate(R.id.nav_People);
+                        .navigate(R.id.nav_MissingPeopleFragment);
             }
         });
         snackbar.show();

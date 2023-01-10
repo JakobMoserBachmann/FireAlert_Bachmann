@@ -30,23 +30,17 @@ public class PersonListService {
         return instance;
     }
 
-
     //Gets all Found People
-
     public List<Person> getFoundPeople()
     {
         return people.stream().filter(person -> person.IsFound).collect(Collectors.toList());
     }
 
-
     //Gets all Missing People
-
-
     public List<Person> getMissingPeople()
     {
         return people.stream().filter(person -> !person.IsFound).collect(Collectors.toList());
     }
-
 
     //Resets all People to Missing Only to Test
     public void SetBackPeople()
