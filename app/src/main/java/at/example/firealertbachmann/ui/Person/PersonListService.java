@@ -3,6 +3,9 @@ package at.example.firealertbachmann.ui.Person;
 import android.os.Build;
 import android.util.Log;
 import androidx.annotation.RequiresApi;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -32,7 +35,7 @@ public class PersonListService {
 
     public List<Person> getFoundPeople()
     {
-        return people.stream().filter(person -> person.IsFound == true).collect(Collectors.toList());
+        return people.stream().filter(person -> person.IsFound).collect(Collectors.toList());
     }
 
 
@@ -41,15 +44,12 @@ public class PersonListService {
 
     public List<Person> getMissingPeople()
     {
-        return people.stream().filter(person -> person.IsFound == false).collect(Collectors.toList());
+        return people.stream().filter(person -> !person.IsFound).collect(Collectors.toList());
     }
 
 
     //Resets all People to Missing Only to Test
     public void SetBackPeople()
-
-    public void FoundPerson(Person person)
-
     {
         for (Person person:getFoundPeople())
         {
@@ -57,22 +57,16 @@ public class PersonListService {
         }
     }
 
+
     //Sets the Person to found
     public void FoundPerson(Person person)
     {
-        for (Person people:people)
-        {
-            Log.v("GETALL", people.Name);
-        }
-        for (Person people:getMissingPeople())
-        {
-            Log.v("GETMISSING", people.Name);
-        }
+        LocalTime time = LocalTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+        person.Uhrzeit = time.format(formatter);
         person.IsFound = true;
-        for (Person people:getFoundPeople())
-        {
-            Log.v("GETFOUND", people.Name);
-        }    }
+    }
 
     //Gets all People
     public ArrayList<Person> getAllPeople()

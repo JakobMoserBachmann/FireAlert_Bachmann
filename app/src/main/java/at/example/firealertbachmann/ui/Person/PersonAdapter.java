@@ -25,6 +25,7 @@ public class PersonAdapter extends ArrayAdapter {
 
     private class ViewHolder {
         TextView txtName;
+        TextView date;
         CheckBox checkBox;
     }
 
@@ -48,6 +49,7 @@ public class PersonAdapter extends ArrayAdapter {
             viewHolder = new ViewHolder();
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_people_listitem, parent, false);
             viewHolder.txtName = convertView.findViewById(R.id.rowitem);
+            viewHolder.date = convertView.findViewById(R.id.rowitemDate);
             viewHolder.checkBox = convertView.findViewById(R.id.checkBox);
             result = convertView;
             convertView.setTag(viewHolder);
@@ -59,6 +61,7 @@ public class PersonAdapter extends ArrayAdapter {
         Person item = getItem(position);
         viewHolder.txtName.setText(item.Name);
         viewHolder.checkBox.setChecked(item.IsFound);
+        viewHolder.date.setText(item.Uhrzeit);
         return result;
     }
 }
