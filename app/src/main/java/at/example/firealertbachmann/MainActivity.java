@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.nfc.tech.MifareClassic;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
@@ -16,6 +17,7 @@ import at.example.firealertbachmann.ui.NfcScan.NfcScanFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
@@ -34,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     PendingIntent pendingIntent;
     IntentFilter[] intentFiltersArray;
     String[][] techListsArray;
-    public Boolean NFCactivated = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -69,10 +70,7 @@ public class MainActivity extends AppCompatActivity {
             techListsArray = new String[][]{new String[]{MifareClassic.class.getName()}};
             intentFiltersArray = new IntentFilter[]{filter};
 
-            if (!nfcAdapter.isEnabled())
-            {
-                NFCactivated = false;
-            }
+
         }
     }
 
@@ -82,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
+
 
     @Override
     protected void onNewIntent(Intent intent) {
