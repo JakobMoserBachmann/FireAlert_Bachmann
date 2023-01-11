@@ -1,9 +1,5 @@
 package at.example.firealertbachmann.ui.Person;
 
-import android.os.Build;
-import android.util.Log;
-import androidx.annotation.RequiresApi;
-
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;

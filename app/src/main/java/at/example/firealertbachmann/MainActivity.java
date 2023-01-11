@@ -5,19 +5,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.nfc.tech.MifareClassic;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
-import android.view.Menu;
-import android.widget.Toast;
-
 import at.example.firealertbachmann.databinding.ActivityMainBinding;
 import at.example.firealertbachmann.ui.NfcScan.NfcScanFragment;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
@@ -59,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
         if (nfcAdapter != null) {
 
             pendingIntent = PendingIntent.getActivity(
@@ -69,11 +59,8 @@ public class MainActivity extends AppCompatActivity {
             IntentFilter filter = new IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED);
             techListsArray = new String[][]{new String[]{MifareClassic.class.getName()}};
             intentFiltersArray = new IntentFilter[]{filter};
-
-
         }
     }
-
 
     @Override
     protected void onNewIntent(Intent intent) {

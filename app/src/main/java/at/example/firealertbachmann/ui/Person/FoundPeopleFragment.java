@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import java.util.ArrayList;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentFoundpeopleBinding;

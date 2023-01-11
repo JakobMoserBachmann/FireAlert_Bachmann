@@ -3,7 +3,6 @@ package at.example.firealertbachmann.ui.Person;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class PersonListAdd {
     LocalTime time = LocalTime.of(00, 00, 00);
