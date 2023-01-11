@@ -1,6 +1,5 @@
 package at.example.firealertbachmann.ui.Person;
 
-import java.util.Date;
 
 public class Person
 {

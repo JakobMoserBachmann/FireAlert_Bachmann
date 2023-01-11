@@ -5,19 +5,10 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.nfc.tech.MifareClassic;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
-import android.view.Menu;
-import android.widget.Toast;
-
 import at.example.firealertbachmann.databinding.ActivityMainBinding;
 import at.example.firealertbachmann.ui.NfcScan.NfcScanFragment;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
@@ -30,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
     Fragment fragment;
     NfcAdapter nfcAdapter;
     PendingIntent pendingIntent;
@@ -43,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        at.example.firealertbachmann.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);
@@ -69,8 +59,6 @@ public class MainActivity extends AppCompatActivity {
             IntentFilter filter = new IntentFilter(NfcAdapter.ACTION_TECH_DISCOVERED);
             techListsArray = new String[][]{new String[]{MifareClassic.class.getName()}};
             intentFiltersArray = new IntentFilter[]{filter};
-
-
         }
     }
 

@@ -3,10 +3,9 @@ package at.example.firealertbachmann.ui.Person;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class PersonListAdd {
-    LocalTime time = LocalTime.of(00, 00, 00);
+    LocalTime time = LocalTime.of(0, 0, 0);
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     public ArrayList<Person> addPeople(ArrayList<Person> peopleList)
