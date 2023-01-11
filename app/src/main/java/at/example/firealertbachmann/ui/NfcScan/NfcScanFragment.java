@@ -98,7 +98,7 @@ public class NfcScanFragment extends Fragment {
         if (mifareClassic != null) {
             try {
                 mifareClassic.connect();
-                mifareClassic.authenticateSectorWithKeyA(4, new byte[]{0x6d, 0x4b, 0x00, 0x00, 0x01, 0x43});
+                //mifareClassic.authenticateSectorWithKeyA(4, new byte[]{0x6d, 0x4b, 0x00, 0x00, 0x01, 0x43});
                 byte[] bytes = mifareClassic.readBlock(16);
 
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
