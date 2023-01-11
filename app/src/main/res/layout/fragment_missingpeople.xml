@@ -7,7 +7,7 @@
     tools:context=".ui.Person.MissingPeopleFragment">
 
     <ListView
-        android:id="@+id/peoplelist"
+        android:id="@+id/missingPeopleList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="168dp"

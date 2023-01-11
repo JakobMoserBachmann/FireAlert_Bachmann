@@ -11,20 +11,20 @@ import androidx.fragment.app.Fragment;
 
 import java.util.ArrayList;
 import at.example.firealertbachmann.R;
-import at.example.firealertbachmann.databinding.FragmentPeopleBinding;
+import at.example.firealertbachmann.databinding.FragmentFoundpeopleBinding;
 
 public class FoundPeopleFragment extends Fragment {
 
     ListView peopleListView;
 
     PersonListService peopleListService = PersonListService.getInstance();
-    private FragmentPeopleBinding binding;
-    private PersonAdapter adapter;
+    private FragmentFoundpeopleBinding binding;
+    private FoundPeopleAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentPeopleBinding.inflate(inflater, container, false);
+        binding = FragmentFoundpeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         CreateListView();
 
@@ -32,9 +32,9 @@ public class FoundPeopleFragment extends Fragment {
     }
     public void CreateListView()
     {
-        peopleListView = (ListView) binding.getRoot().findViewById(R.id.FoundPeople);
+        peopleListView = (ListView) binding.getRoot().findViewById(R.id.foundPeopleList);
 
-        adapter = new PersonAdapter((ArrayList<Person>) peopleListService.getFoundPeople(), getContext());
+        adapter = new FoundPeopleAdapter((ArrayList<Person>) peopleListService.getFoundPeople(), getContext());
         peopleListView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();

@@ -51,7 +51,6 @@ public class PersonListService {
         }
     }
 
-
     //Sets the Person to found
     public void FoundPerson(Person person)
     {
