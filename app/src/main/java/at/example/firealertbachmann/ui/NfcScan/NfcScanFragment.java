@@ -9,12 +9,15 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -34,17 +37,16 @@ public class NfcScanFragment extends Fragment {
     CheckView check;
     Button button;
     ProgressBar progressbar;
-    Boolean startSearch = false;
     Integer btnCount = 0;
+    MainActivity mainActivity = new MainActivity();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,Bundle savedInstanceState) {
 
         binding = FragmentNfcscanBinding.inflate(inflater, container, false);
+
         View root = binding.getRoot();
-
         progressbar = root.findViewById(R.id.progressBar);
-
         button = root.findViewById(R.id.nfc_scan_button);
         check = root.findViewById(R.id.check);
 
@@ -52,32 +54,41 @@ public class NfcScanFragment extends Fragment {
 
         button.setOnClickListener(view ->
         {
-            startSearch = true;
-            btnCount++;
 
-            if (btnCount%2 == 1)
+            if (mainActivity.NFCactivated)
             {
-                button.setText("Stop NFC Scan");
-                ((MainActivity)getActivity()).startNFC();
-                setProgressGIF();
+                btnCount++;
+                if (btnCount%2 == 1)
+                {
+                    button.setText("Stop NFC Scan");
+                    ((MainActivity)getActivity()).startNFC();
+                    setProgressGIF();
 
-                //Snackbar erstellen
-                Snackbar snackbar = Snackbar.make(view, "NFC Scan ist gestartet", Snackbar.LENGTH_LONG);
+                    //Snackbar erstellen
+                    Snackbar snackbar = Snackbar.make(view, "NFC Scan ist gestartet", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+                else if(btnCount%2 == 0)
+                {
+                    button.setText("Start NFC Scan");
+                    ((MainActivity)getActivity()).stopNFC();
+                    stopGIF();
+                    CreateSnackBarButton(view);
+                }
+            }
+            else
+            {
+                Snackbar snackbar = Snackbar.make(view, "Bitte NFC in den Einstellungen aktivieren und App neu starten.", Snackbar.LENGTH_LONG);
                 snackbar.show();
             }
-            else if(btnCount%2 == 0)
-            {
-                button.setText("Start NFC Scan");
-                ((MainActivity)getActivity()).stopNFC();
-                stopGIF();
-                CreateSnackBarButton(view);
-            }
+
         });
         return root;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void processNFC(Intent intent) {
+    public void processNFC(Intent intent)
+    {
 
         Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
@@ -100,25 +111,24 @@ public class NfcScanFragment extends Fragment {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-
             //NFC FOUND
             setCheckGIF();
-
             //GIF Timer
             Handler handler = new Handler(Looper.getMainLooper()) {
-            @Override
-            public void handleMessage(Message msg) {
-                if (msg.what == 1) {
-                    setProgressGIF();
+                @Override
+                public void handleMessage(Message msg) {
+                    if (msg.what == 1) {
+                        setProgressGIF();
+                    }
                 }
-            }
-        };
-        handler.sendEmptyMessageDelayed(1, 1000);
+            };
+            handler.sendEmptyMessageDelayed(1, 1000);
 
-
-    } else  {
+        } else {
             // kein MIFARE Classic NFC Tag
         }
+
+
     }
 
     private void setProgressGIF()

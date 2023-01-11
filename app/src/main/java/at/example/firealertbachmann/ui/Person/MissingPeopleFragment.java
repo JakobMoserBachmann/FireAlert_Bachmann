@@ -1,6 +1,7 @@
 package at.example.firealertbachmann.ui.Person;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,20 +14,20 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 
 import at.example.firealertbachmann.R;
-import at.example.firealertbachmann.databinding.FragmentPeopleBinding;
+import at.example.firealertbachmann.databinding.FragmentMissingpeopleBinding;
 
 public class MissingPeopleFragment extends Fragment {
 
     ListView peopleListView;
     Button button;
     PersonListService peopleListService = PersonListService.getInstance();
-    private FragmentPeopleBinding binding;
-    private PersonAdapter adapter;
+    private FragmentMissingpeopleBinding binding;
+    private MissingPeopleAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
-        binding = FragmentPeopleBinding.inflate(inflater, container, false);
+        //peopleListService.SetBackPeople();
+        binding = FragmentMissingpeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         button = root.findViewById(R.id.buttonCheckPeople);
        CreateListView();
@@ -36,9 +37,9 @@ public class MissingPeopleFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> arg0, View view, int position, long arg3) {
 
-                Person item = adapter.getItem(position);
+                Person person = adapter.getItem(position);
 
-                item.IsFound = !item.IsFound;
+                person.CheckBox = !person.CheckBox;
 
                 adapter.notifyDataSetChanged();
             }
@@ -48,9 +49,10 @@ public class MissingPeopleFragment extends Fragment {
         {
             for (Person person: peopleListService.getMissingPeople())
             {
-                if (person.IsFound == Boolean.TRUE)
-                {
+                Log.v("ABHAKENBUTTON", person.Name);
 
+                if (person.CheckBox)
+                {
                     peopleListService.FoundPerson(person);
                 }
             }
@@ -62,9 +64,9 @@ public class MissingPeopleFragment extends Fragment {
     }
     public void CreateListView()
     {
-        peopleListView = (ListView) binding.getRoot().findViewById(R.id.peoplelist);
+        peopleListView = (ListView) binding.getRoot().findViewById(R.id.missingPeopleList);
 
-        adapter = new PersonAdapter((ArrayList<Person>) peopleListService.getMissingPeople(), getContext());
+        adapter = new MissingPeopleAdapter((ArrayList<Person>) peopleListService.getMissingPeople(), getContext());
         peopleListView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();

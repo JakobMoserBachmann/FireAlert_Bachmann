@@ -12,13 +12,13 @@ import androidx.annotation.Nullable;
 import at.example.firealertbachmann.R;
 import java.util.ArrayList;
 
-public class PersonAdapter extends ArrayAdapter {
+public class MissingPeopleAdapter extends ArrayAdapter {
 
     ArrayList<Person> dataSet;
     Context mContext;
 
-    public PersonAdapter(ArrayList<Person> dataSet, @NonNull Context context) {
-        super(context, R.layout.fragment_people_listitem, dataSet);
+    public MissingPeopleAdapter(ArrayList<Person> dataSet, @NonNull Context context) {
+        super(context, R.layout.missingpeople_listview, dataSet);
         this.dataSet = dataSet;
         this.mContext = context;
     }
@@ -47,10 +47,10 @@ public class PersonAdapter extends ArrayAdapter {
         View result;
         if (convertView == null) {
             viewHolder = new ViewHolder();
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.fragment_people_listitem, parent, false);
-            viewHolder.txtName = convertView.findViewById(R.id.rowitem);
-            viewHolder.date = convertView.findViewById(R.id.rowitemDate);
-            viewHolder.checkBox = convertView.findViewById(R.id.checkBox);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.missingpeople_listview, parent, false);
+            viewHolder.txtName = convertView.findViewById(R.id.txtMissingName);
+            viewHolder.date = convertView.findViewById(R.id.txtMissingDate);
+            viewHolder.checkBox = convertView.findViewById(R.id.isFound);
             result = convertView;
             convertView.setTag(viewHolder);
         } else {
@@ -60,7 +60,7 @@ public class PersonAdapter extends ArrayAdapter {
 
         Person item = getItem(position);
         viewHolder.txtName.setText(item.Name);
-        viewHolder.checkBox.setChecked(item.IsFound);
+        viewHolder.checkBox.setChecked(item.CheckBox);
         viewHolder.date.setText(item.Uhrzeit);
         return result;
     }
