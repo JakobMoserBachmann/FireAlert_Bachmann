@@ -34,16 +34,17 @@ public class NfcScanFragment extends Fragment {
 
     PersonListService peopleListService = PersonListService.getInstance();
     private FragmentNfcscanBinding binding;
+    NfcAdapter nfcAdapter;
     CheckView check;
     Button button;
     ProgressBar progressbar;
     Integer btnCount = 0;
-    MainActivity mainActivity = new MainActivity();
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,Bundle savedInstanceState) {
 
         binding = FragmentNfcscanBinding.inflate(inflater, container, false);
+        nfcAdapter = NfcAdapter.getDefaultAdapter(this.getContext());
 
         View root = binding.getRoot();
         progressbar = root.findViewById(R.id.progressBar);
@@ -55,7 +56,7 @@ public class NfcScanFragment extends Fragment {
         button.setOnClickListener(view ->
         {
 
-            if (mainActivity.NFCactivated)
+            if (nfcAdapter.isEnabled())
             {
                 btnCount++;
                 if (btnCount%2 == 1)
@@ -78,7 +79,7 @@ public class NfcScanFragment extends Fragment {
             }
             else
             {
-                Snackbar snackbar = Snackbar.make(view, "Bitte NFC in den Einstellungen aktivieren und App neu starten.", Snackbar.LENGTH_LONG);
+                Snackbar snackbar = Snackbar.make(view, "Bitte NFC in den Einstellungen aktivieren.", Snackbar.LENGTH_LONG);
                 snackbar.show();
             }
 

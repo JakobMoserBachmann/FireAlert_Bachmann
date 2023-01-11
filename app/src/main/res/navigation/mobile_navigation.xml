@@ -14,13 +14,13 @@
     <fragment
         android:id="@+id/nav_MissingPeopleFragment"
         android:name="at.example.firealertbachmann.ui.Person.MissingPeopleFragment"
-        android:label="@string/menu_peoplelist"
+        android:label="@string/menu_missingpeople"
         tools:layout="@layout/fragment_missingpeople" />
 
     <fragment
         android:id="@+id/nav_FoundPersonFragment"
         android:name="at.example.firealertbachmann.ui.Person.FoundPeopleFragment"
-        android:label="@string/menu_peoplelist"
+        android:label="@string/menu_foundpeople"
         tools:layout="@layout/fragment_foundpeople" />
 
 
