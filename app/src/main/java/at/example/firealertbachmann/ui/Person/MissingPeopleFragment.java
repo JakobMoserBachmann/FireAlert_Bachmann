@@ -9,9 +9,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-
 import java.util.ArrayList;
-
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentMissingpeopleBinding;
 
@@ -29,7 +27,7 @@ public class MissingPeopleFragment extends Fragment {
         binding = FragmentMissingpeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         button = root.findViewById(R.id.buttonCheckPeople);
-       CreateListView();
+        CreateListView();
 
         peopleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -59,6 +57,7 @@ public class MissingPeopleFragment extends Fragment {
 
         return root;
     }
+
     public void CreateListView()
     {
         peopleListView = (ListView) binding.getRoot().findViewById(R.id.missingPeopleList);

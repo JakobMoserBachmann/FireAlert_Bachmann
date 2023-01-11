@@ -10,7 +10,7 @@
             android:title="@string/menu_nfcscan" />
         <item
             android:id="@+id/nav_MissingPeopleFragment"
-            android:icon="@drawable/ic_peoplelist"
+            android:icon="@drawable/ic_missingpeoplelist"
             android:title="@string/menu_missingpeople" />
         <item
             android:id="@+id/nav_FoundPersonFragment"

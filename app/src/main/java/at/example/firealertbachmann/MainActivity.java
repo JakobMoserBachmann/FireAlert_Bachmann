@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
         if (nfcAdapter != null) {
 
             pendingIntent = PendingIntent.getActivity(
@@ -61,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
             intentFiltersArray = new IntentFilter[]{filter};
         }
     }
-
 
     @Override
     protected void onNewIntent(Intent intent) {
