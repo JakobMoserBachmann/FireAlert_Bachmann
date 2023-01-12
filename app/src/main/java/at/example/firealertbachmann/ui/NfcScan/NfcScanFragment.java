@@ -9,15 +9,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
@@ -98,6 +95,7 @@ public class NfcScanFragment extends Fragment {
         if (mifareClassic != null) {
             try {
                 mifareClassic.connect();
+                mifareClassic.authenticateSectorWithKeyA(4, new byte[]{0x6d, 0x4b, 0x00, 0x00, 0x01, 0x43});
                 byte[] bytes = mifareClassic.readBlock(16);
 
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
