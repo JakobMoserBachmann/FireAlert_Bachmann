@@ -6,5 +6,7 @@
     <string name="menu_peoplelist">Nicht gefunden</string>
     <string name="menu_missingpeople">Missing People</string>
     <string name="menu_foundpeople">Found People</string>
+    <string name="menu_QR">GetL Prople List</string>
+
     <string name="snackbar_button">Go to Missing list of People</string>
 </resources>

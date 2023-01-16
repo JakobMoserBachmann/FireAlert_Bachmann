@@ -1,9 +1,7 @@
 package at.example.firealertbachmann.ui.Person;
 
 import android.util.Log;
-
 import com.google.gson.Gson;
-
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.time.LocalTime;
@@ -16,12 +14,13 @@ public class PersonListAdd {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     public ArrayList<Person> addPeople(ArrayList<Person> peopleList) {
-/*        peopleList.add(new Person("JAMO", false, "000763", time.format(formatter), false));
+/*      peopleList.add(new Person("JAMO", false, "000763", time.format(formatter), false));
         peopleList.add(new Person("MCSA", false, "000765", time.format(formatter), false));
         peopleList.add(new Person("MASB", false, "000606", time.format(formatter), false));
         peopleList.add(new Person("TEST1", false, "000101", time.format(formatter), false));
         peopleList.add(new Person("TEST2", false, "000102", time.format(formatter), false));
-        peopleList.add(new Person("TEST3", false, "000103", time.format(formatter), false));*/
+        peopleList.add(new Person("TEST3", false, "000103", time.format(formatter), false));
+*/
 
         new Thread(new Runnable() {
             @Override
