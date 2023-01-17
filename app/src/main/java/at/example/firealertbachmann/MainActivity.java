@@ -21,7 +21,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    private ActivityMainBinding binding;
     Fragment fragment;
     NfcAdapter nfcAdapter;
     PendingIntent pendingIntent;
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        at.example.firealertbachmann.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMain.toolbar);

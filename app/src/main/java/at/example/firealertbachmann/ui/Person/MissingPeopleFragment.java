@@ -1,7 +1,6 @@
 package at.example.firealertbachmann.ui.Person;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,8 +46,6 @@ public class MissingPeopleFragment extends Fragment {
         {
             for (Person person: peopleListService.getMissingPeople())
             {
-                Log.v("ABHAKENBUTTON", person.Name);
-
                 if (person.CheckBox)
                 {
                     peopleListService.FoundPerson(person);

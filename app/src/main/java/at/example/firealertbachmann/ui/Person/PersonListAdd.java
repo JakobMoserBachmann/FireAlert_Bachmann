@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class PersonListAdd {
-    LocalTime time = LocalTime.of(00, 00, 00);
+    LocalTime time = LocalTime.of(0, 0, 0);
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     public ArrayList<Person> addPeople(ArrayList<Person> peopleList) {

@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class PersonListService {
 
     public static PersonListService instance = null;
-    public ArrayList<Person> people = new ArrayList<Person>();
+    public ArrayList<Person> people = new ArrayList<>();
 
     private PersonListService()
     {

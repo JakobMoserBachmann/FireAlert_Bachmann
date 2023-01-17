@@ -1,7 +1,5 @@
 package at.example.firealertbachmann.ui.Person;
 
-
-
 public class Person
 {
 

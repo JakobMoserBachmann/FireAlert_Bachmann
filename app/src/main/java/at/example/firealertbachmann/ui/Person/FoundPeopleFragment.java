@@ -18,7 +18,6 @@ public class FoundPeopleFragment extends Fragment {
 
     PersonListService peopleListService = PersonListService.getInstance();
     private FragmentFoundpeopleBinding binding;
-    private FoundPeopleAdapter adapter;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class FoundPeopleFragment extends Fragment {
     {
         peopleListView = (ListView) binding.getRoot().findViewById(R.id.foundPeopleList);
 
-        adapter = new FoundPeopleAdapter((ArrayList<Person>) peopleListService.getFoundPeople(), getContext());
+        FoundPeopleAdapter adapter = new FoundPeopleAdapter((ArrayList<Person>) peopleListService.getFoundPeople(), getContext());
         peopleListView.setAdapter(adapter);
 
         adapter.notifyDataSetChanged();

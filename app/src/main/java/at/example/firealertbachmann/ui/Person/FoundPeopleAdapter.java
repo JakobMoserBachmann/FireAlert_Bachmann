@@ -26,7 +26,6 @@ public class FoundPeopleAdapter  extends ArrayAdapter {
     private class ViewHolder {
         TextView txtName;
         TextView date;
-        CheckBox checkBox;
     }
 
     @Override
