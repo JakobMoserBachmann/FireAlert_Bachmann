@@ -19,7 +19,7 @@
             android:title="@string/menu_foundpeople" />
         <item
             android:id="@+id/nav_QRScanFragment"
-            android:icon="@drawable/ic_foundpeoplelist_foreground"
+            android:icon="@drawable/ic_qrscanner"
             android:title="@string/menu_QR" />
     </group>
 </menu>
