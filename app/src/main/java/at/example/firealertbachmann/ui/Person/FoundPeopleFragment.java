@@ -1,6 +1,5 @@
 package at.example.firealertbachmann.ui.Person;
 
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +13,6 @@ import at.example.firealertbachmann.databinding.FragmentFoundpeopleBinding;
 
 public class FoundPeopleFragment extends Fragment {
 
-    ListView peopleListView;
-
     PersonListService peopleListService = PersonListService.getInstance();
     private FragmentFoundpeopleBinding binding;
 
@@ -28,9 +25,10 @@ public class FoundPeopleFragment extends Fragment {
 
         return root;
     }
+
     public void CreateListView()
     {
-        peopleListView = (ListView) binding.getRoot().findViewById(R.id.foundPeopleList);
+        ListView peopleListView = (ListView) binding.getRoot().findViewById(R.id.foundPeopleList);
 
         FoundPeopleAdapter adapter = new FoundPeopleAdapter((ArrayList<Person>) peopleListService.getFoundPeople(), getContext());
         peopleListView.setAdapter(adapter);

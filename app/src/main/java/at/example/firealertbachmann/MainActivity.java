@@ -8,6 +8,7 @@ import android.nfc.tech.MifareClassic;
 import android.os.Bundle;
 import at.example.firealertbachmann.databinding.ActivityMainBinding;
 import at.example.firealertbachmann.ui.NfcScan.NfcScanFragment;
+import at.example.firealertbachmann.ui.Person.PersonListService;
 import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -21,7 +22,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    Fragment fragment;
+
     NfcAdapter nfcAdapter;
     PendingIntent pendingIntent;
     IntentFilter[] intentFiltersArray;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         super.onNewIntent(intent);
         FragmentManager manager = this.getSupportFragmentManager();
         manager.executePendingTransactions();
-        fragment = manager.findFragmentById(R.id.nav_host_fragment_content_main).getChildFragmentManager().getFragments().get(0);
+        Fragment fragment = manager.findFragmentById(R.id.nav_host_fragment_content_main).getChildFragmentManager().getFragments().get(0);
 
         // Check if the fragment is an instance of the right fragment
         if (fragment instanceof NfcScanFragment) {
@@ -109,4 +110,5 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }

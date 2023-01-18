@@ -1,8 +1,10 @@
-package at.example.firealertbachmann.ui.Person;
+package QRCodeScan;
 
 import com.google.gson.Gson;
 import java.io.InputStreamReader;
 import java.net.URL;
+
+import at.example.firealertbachmann.ui.Person.Person;
 
 public class GsonFetchNetworkJson {
 
