@@ -11,12 +11,14 @@ public class PersonListService {
     public static PersonListService instance = null;
     private ArrayList<Person> people = new ArrayList<>();
 
-    private PersonListService()
-    {
+    private PersonListService() {}
 
-    }
+    public void addPerson(String Name,String Keynumber){
+        Person person = new Person();
 
-    public void addPerson(Person person){
+        person.Name = Name;
+        person.KeyNumber = Keynumber;
+
         people.add(person);
     }
 

@@ -1,8 +1,7 @@
-package at.example.firealertbachmann.ui.Person;
+package QRCodeScan;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,14 +15,10 @@ import com.journeyapps.barcodescanner.ScanContract;
 import com.journeyapps.barcodescanner.ScanOptions;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentQrscanBinding;
+import at.example.firealertbachmann.ui.Person.PersonListService;
 import blazing.chain.LZSEncoding;
 
 public class QRScanFragment extends Fragment {
-
-    // Button to activate QR Scanner
-    Button btn_scan;
-    private FragmentQrscanBinding binding;
-
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -31,10 +26,10 @@ public class QRScanFragment extends Fragment {
     {
         super.onCreate(savedInstanceState);
 
-        binding = FragmentQrscanBinding.inflate(inflater, container, false);
+        FragmentQrscanBinding binding = FragmentQrscanBinding.inflate(inflater, container, false);
 
         View root = binding.getRoot();
-        btn_scan = root.findViewById(R.id.btn_scan);
+        Button btn_scan = root.findViewById(R.id.btn_scan);
 
         // Starting Scanning
         btn_scan.setOnClickListener(v->
@@ -49,7 +44,7 @@ public class QRScanFragment extends Fragment {
         ScanOptions options = new ScanOptions();
         options.setPrompt("Volume up to flash on");
         options.setBeepEnabled(true);
-        options.setOrientationLocked(true);
+        options.setOrientationLocked(false);
         options.setCaptureActivity(CaptureActivity.class);
         barLauncher.launch(options);
     };
@@ -61,21 +56,16 @@ public class QRScanFragment extends Fragment {
             AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
             builder.setTitle("Result");
             PersonListService.getInstance().clearList();
-            builder.setMessage(LZSEncoding.decompress(result.getContents()));
-            String rawPeople = LZSEncoding.decompress(result.getContents());
-            String[] peopleArray = rawPeople.split(";");
+            //Messagebox
+            builder.setMessage("QR Code wurde erfolgreich gescannt.");
+
+            String[] peopleArray = LZSEncoding.decompress(result.getContents()).split(";");
 
             for (String people: peopleArray) {
 
-
-                Person newPerson = new Person();
                 String[] personResult = people.split(",");
-                Log.v("Person---> ", personResult[0]);
-                Log.v("PersonKeynumber---> ", personResult[1]);
-                newPerson.Name = personResult[0];
-                newPerson.KeyNumber = personResult[1];
-                PersonListService.getInstance().addPerson(newPerson);
 
+                PersonListService.getInstance().addPerson(personResult[0], personResult[1]);
             }
 
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
