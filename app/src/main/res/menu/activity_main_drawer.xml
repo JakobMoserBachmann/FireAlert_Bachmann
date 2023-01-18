@@ -15,7 +15,7 @@
             android:title="@string/menu_missingpeople" />
         <item
             android:id="@+id/nav_FoundPersonFragment"
-            android:icon="@drawable/ic_foundpeoplelist_foreground"
+            android:icon="@drawable/ic_foundpeoplelist"
             android:title="@string/menu_foundpeople" />
         <item
             android:id="@+id/nav_QRScanFragment"
