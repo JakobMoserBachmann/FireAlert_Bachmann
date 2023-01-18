@@ -51,10 +51,8 @@ public class MissingPeopleFragment extends Fragment {
                     peopleListService.FoundPerson(person);
                 }
             }
-
             CreateListView();
         });
-
         return root;
     }
 

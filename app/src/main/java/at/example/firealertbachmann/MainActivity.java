@@ -73,7 +73,6 @@ public class MainActivity extends AppCompatActivity {
         if (fragment instanceof NfcScanFragment) {
 
             NfcScanFragment my = (NfcScanFragment) fragment;
-
             // Pass intent or its data to the fragment's method
             my.processNFC(intent);
         }

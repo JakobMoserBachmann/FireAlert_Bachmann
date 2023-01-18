@@ -1,12 +1,10 @@
 <resources>
     <string name="app_name">FireAlertBachmann</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-    <string name="menu_nfcscan">NFC Scan</string>
-    <string name="menu_peoplelist">Nicht gefunden</string>
-    <string name="menu_missingpeople">Missing People</string>
-    <string name="menu_foundpeople">Found People</string>
-    <string name="menu_QR">GetL Prople List</string>
+    <string name="menu_nfcscan">Schlüssel Scannen</string>
+    <string name="menu_peoplelist">Vermisste Mitarbeiter</string>
+    <string name="menu_missingpeople">Vermisste Mitarbeiter</string>
+    <string name="menu_foundpeople">Gefundene Mitarbeiter</string>
+    <string name="menu_QR">QR-Code Scannen</string>
 
     <string name="snackbar_button">Go to Missing list of People</string>
 </resources>

@@ -9,12 +9,15 @@ import java.util.stream.Collectors;
 public class PersonListService {
 
     public static PersonListService instance = null;
-    public ArrayList<Person> people = new ArrayList<>();
+    private ArrayList<Person> people = new ArrayList<>();
 
     private PersonListService()
     {
-        PersonListAdd personListAdd = new PersonListAdd();
-        personListAdd.addPeople(people);
+
+    }
+
+    public void addPerson(Person person){
+        people.add(person);
     }
 
     public static PersonListService getInstance()
@@ -36,6 +39,10 @@ public class PersonListService {
     public List<Person> getMissingPeople()
     {
         return people.stream().filter(person -> !person.IsFound).collect(Collectors.toList());
+    }
+
+    public void clearList(){
+        people.clear();
     }
 
     //Resets all People to Missing Only to Test

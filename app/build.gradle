@@ -45,5 +45,6 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.github.cdflynn:checkview:v1.2'
     implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'com.github.tommyettinger:blazingchain:1.4.4.4'
 
 }

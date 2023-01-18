@@ -50,7 +50,6 @@ public class NfcScanFragment extends Fragment {
 
         button.setOnClickListener(view ->
         {
-
             if (nfcAdapter.isEnabled())
             {
                 btnCount++;
@@ -77,14 +76,12 @@ public class NfcScanFragment extends Fragment {
                 Snackbar snackbar = Snackbar.make(view, "Bitte NFC in den Einstellungen aktivieren.", Snackbar.LENGTH_LONG);
                 snackbar.show();
             }
-
         });
         return root;
     }
 
     public void processNFC(Intent intent)
     {
-
         Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
 
         MifareClassic mifareClassic = MifareClassic.get(tagFromIntent);
@@ -118,7 +115,6 @@ public class NfcScanFragment extends Fragment {
                 }
             };
             handler.sendEmptyMessageDelayed(1, 1000);
-
         }
     }
 

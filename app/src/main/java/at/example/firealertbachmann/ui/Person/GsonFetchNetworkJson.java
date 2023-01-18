@@ -11,6 +11,5 @@ public class GsonFetchNetworkJson {
         URL url = new URL("http://localhost:3000/people");
         InputStreamReader reader = new InputStreamReader(url.openStream());
         Person[] people = new Gson().fromJson(reader, Person[].class);
-
     }
 }
