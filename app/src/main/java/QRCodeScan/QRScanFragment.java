@@ -54,10 +54,14 @@ public class QRScanFragment extends Fragment {
     {
         if(result.getContents() != null){
             AlertDialog.Builder builder = new AlertDialog.Builder(this.getContext());
-            builder.setTitle("Result");
+            builder.setTitle("Ergebnis");
+
             PersonListService.getInstance().clearList();
+            if (PersonListService.getInstance() != null){
+
+            }
             //Messagebox
-            builder.setMessage("QR Code wurde erfolgreich gescannt.");
+            builder.setMessage("QR-Code wurde erfolgreich gescannt.");
 
             String[] peopleArray = LZSEncoding.decompress(result.getContents()).split(";");
             for (String people: peopleArray) {

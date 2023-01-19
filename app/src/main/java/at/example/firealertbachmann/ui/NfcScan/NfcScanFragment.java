@@ -27,6 +27,7 @@ import cdflynn.android.library.checkview.CheckView;
 
 public class NfcScanFragment extends Fragment {
 
+    // variables & components
     PersonListService peopleListService = PersonListService.getInstance();
     private FragmentNfcscanBinding binding;
     NfcAdapter nfcAdapter;
