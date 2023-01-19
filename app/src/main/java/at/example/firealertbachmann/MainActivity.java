@@ -8,7 +8,6 @@ import android.nfc.tech.MifareClassic;
 import android.os.Bundle;
 import at.example.firealertbachmann.databinding.ActivityMainBinding;
 import at.example.firealertbachmann.ui.NfcScan.NfcScanFragment;
-import at.example.firealertbachmann.ui.Person.PersonListService;
 import com.google.android.material.navigation.NavigationView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;

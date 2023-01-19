@@ -44,7 +44,7 @@ public class QRScanFragment extends Fragment {
         ScanOptions options = new ScanOptions();
         options.setPrompt("Volume up to flash on");
         options.setBeepEnabled(true);
-        options.setOrientationLocked(false);
+        options.setOrientationLocked(true);
         options.setCaptureActivity(CaptureActivity.class);
         barLauncher.launch(options);
     };
