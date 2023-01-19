@@ -28,7 +28,7 @@ public class FoundPeopleFragment extends Fragment {
 
     public void CreateListView()
     {
-        ListView peopleListView = (ListView) binding.getRoot().findViewById(R.id.foundPeopleList);
+        ListView peopleListView = binding.getRoot().findViewById(R.id.foundPeopleList);
 
         FoundPeopleAdapter adapter = new FoundPeopleAdapter((ArrayList<Person>) peopleListService.getFoundPeople(), getContext());
         peopleListView.setAdapter(adapter);
