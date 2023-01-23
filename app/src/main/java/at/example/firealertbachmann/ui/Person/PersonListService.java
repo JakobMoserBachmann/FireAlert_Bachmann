@@ -66,12 +66,6 @@ public class PersonListService {
         person.IsFound = true;
     }
 
-    //Gets all People
-    public ArrayList<Person> getAllPeople()
-    {
-        return this.people;
-    }
-
     //Gets one specific Person filtered by the Key number
     public Person GetPersonByKeyNumber(String KeyNumber)
     {
