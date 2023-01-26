@@ -1,6 +1,9 @@
 package at.example.firealertbachmann.ui.Person;
 
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +68,7 @@ public class MissingPeopleFragment extends Fragment {
 
         adapter.notifyDataSetChanged();
     }
+
 
     @Override
     public void onDestroyView() {
