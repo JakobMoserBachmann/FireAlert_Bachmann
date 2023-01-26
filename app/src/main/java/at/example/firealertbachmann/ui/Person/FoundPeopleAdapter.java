@@ -56,8 +56,8 @@ public class FoundPeopleAdapter  extends ArrayAdapter {
         }
 
         Person item = getItem(position);
-        viewHolder.txtName.setText(item.Name);
-        viewHolder.date.setText(item.Uhrzeit);
+        viewHolder.txtName.setText(item.getName());
+        viewHolder.date.setText(item.getUhrzeit());
         return result;
     }
 }

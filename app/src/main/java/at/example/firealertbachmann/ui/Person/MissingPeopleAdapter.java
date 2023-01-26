@@ -11,13 +11,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import at.example.firealertbachmann.R;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MissingPeopleAdapter extends ArrayAdapter {
 
-    ArrayList<Person> dataSet;
+    List<Person> dataSet;
     Context mContext;
 
-    public MissingPeopleAdapter(ArrayList<Person> dataSet, @NonNull Context context) {
+    public MissingPeopleAdapter(List<Person> dataSet, @NonNull Context context) {
         super(context, R.layout.missingpeople_listview, dataSet);
         this.dataSet = dataSet;
         this.mContext = context;
@@ -60,9 +61,9 @@ public class MissingPeopleAdapter extends ArrayAdapter {
         }
 
         Person item = getItem(position);
-        viewHolder.txtName.setText(item.Name);
-        viewHolder.checkBox.setChecked(item.CheckBox);
-        viewHolder.date.setText(item.Uhrzeit);
+        viewHolder.txtName.setText(item.getName());
+        viewHolder.checkBox.setChecked(item.isCheckBox());
+        viewHolder.date.setText(item.getUhrzeit());
         return result;
     }
 }

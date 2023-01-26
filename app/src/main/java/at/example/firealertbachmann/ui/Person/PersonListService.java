@@ -13,11 +13,11 @@ public class PersonListService {
 
     private PersonListService() {}
 
-    public void addPerson(String Name,String Keynumber){
+    public void addPerson(String name,String keyNumber){
         Person person = new Person();
 
-        person.Name = Name;
-        person.KeyNumber = Keynumber;
+        person.setName(name);
+        person.setKeyNumber(keyNumber); ;
 
         people.add(person);
     }
@@ -34,13 +34,13 @@ public class PersonListService {
     //Gets all Found People
     public List<Person> getFoundPeople()
     {
-        return people.stream().filter(person -> person.IsFound).collect(Collectors.toList());
+        return people.stream().filter(person -> person.isFound()).collect(Collectors.toList());
     }
 
     //Gets all Missing People
     public List<Person> getMissingPeople()
     {
-        return people.stream().filter(person -> !person.IsFound).collect(Collectors.toList());
+        return people.stream().filter(person -> !person.isFound()).collect(Collectors.toList());
     }
 
     public void clearList(){
@@ -52,26 +52,26 @@ public class PersonListService {
     {
         for (Person person:getFoundPeople())
         {
-            person.IsFound = false;
+            person.setFound(false);
         }
     }
 
     //Sets the Person to found
-    public void FoundPerson(Person person)
+    public void foundPerson(Person person)
     {
         LocalTime time = LocalTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-        person.Uhrzeit = time.format(formatter);
-        person.IsFound = true;
+        person.setUhrzeit(time.format(formatter));
+        person.setFound(true);
     }
 
     //Gets one specific Person filtered by the Key number
-    public Person GetPersonByKeyNumber(String KeyNumber)
+    public Person getPersonByKeyNumber(String KeyNumber)
     {
         for (Person people:people)
         {
-            if (people.KeyNumber.equals(KeyNumber))
+            if (people.getKeyNumber().equals(KeyNumber))
             {
                 return people;
             }

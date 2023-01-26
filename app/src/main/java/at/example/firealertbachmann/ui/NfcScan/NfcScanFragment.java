@@ -98,7 +98,7 @@ public class NfcScanFragment extends Fragment {
                 Log.v("KeyNumber---------->", KeyNumberShort);
 
                 //Add Scanned Person to Found People
-                peopleListService.FoundPerson(peopleListService.GetPersonByKeyNumber(KeyNumberShort));
+                peopleListService.foundPerson(peopleListService.getPersonByKeyNumber(KeyNumberShort));
 
             } catch (IOException e) {
                 e.printStackTrace();

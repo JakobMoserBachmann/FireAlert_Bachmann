@@ -1,9 +1,6 @@
 package at.example.firealertbachmann.ui.Person;
 
-import android.nfc.Tag;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,8 +8,12 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentMissingpeopleBinding;
 
@@ -20,6 +21,7 @@ public class MissingPeopleFragment extends Fragment {
 
     ListView peopleListView;
     Button button;
+    SearchView searchView;
     PersonListService peopleListService = PersonListService.getInstance();
     private FragmentMissingpeopleBinding binding;
     private MissingPeopleAdapter adapter;
@@ -39,7 +41,7 @@ public class MissingPeopleFragment extends Fragment {
 
                 Person person = adapter.getItem(position);
 
-                person.CheckBox = !person.CheckBox;
+                person.setCheckBox(!person.isCheckBox());
 
                 adapter.notifyDataSetChanged();
             }
@@ -49,14 +51,42 @@ public class MissingPeopleFragment extends Fragment {
         {
             for (Person person: peopleListService.getMissingPeople())
             {
-                if (person.CheckBox)
+                if (person.isCheckBox())
                 {
-                    peopleListService.FoundPerson(person);
+                    peopleListService.foundPerson(person);
                 }
             }
             CreateListView();
         });
+
+        searchView = root.findViewById(R.id.simpleSearchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                CreateListView(searchView.getQuery().toString());
+                return false;
+            }
+        });
         return root;
+    }
+
+    public void CreateListView(String filterText)
+    {
+        peopleListView = (ListView) binding.getRoot().findViewById(R.id.missingPeopleList);
+        List<Person> filteredPerson = peopleListService.getMissingPeople()
+                .stream()
+                .filter(x -> x.getName().toLowerCase().contains(filterText.toLowerCase()))
+                .collect(Collectors.toList());
+        adapter = new MissingPeopleAdapter(filteredPerson, getContext());
+        peopleListView.setAdapter(adapter);
+
+        adapter.notifyDataSetChanged();
     }
 
     public void CreateListView()
@@ -68,7 +98,6 @@ public class MissingPeopleFragment extends Fragment {
 
         adapter.notifyDataSetChanged();
     }
-
 
     @Override
     public void onDestroyView() {
