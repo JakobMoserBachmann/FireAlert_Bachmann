@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="217dp"
+        android:layout_height="88dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="216dp"
+        android:text="Zu den Wlan Einstellungen"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="369dp"
+        android:layout_height="219dp"
+        android:text="Der erste Schritt der App wäre ein Wlan verbindung herzustellen falls dies schon der fall ist können sie diese Seite überspringen. \n\nWenn sie noch nicht mit dem Bachmann Wlan &quot;BMDATA-WLAN&quot; verbunden sind drücken sie auf den unteren Knopf um zu den Einstellungen zu gelangen und verbinden sie sich mit diesem."
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="121dp" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="309dp"
+        android:layout_height="33dp"
+        android:text="Wlan Verbindung herstellen:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="67dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Einführung Überspringen"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="128dp"
+        android:layout_height="23dp"
+        android:text="Nächster Schritt"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="267dp"
+        tools:layout_editor_absoluteY="692dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
