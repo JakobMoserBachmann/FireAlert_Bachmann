@@ -7,10 +7,10 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="217dp"
-        android:layout_height="88dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="216dp"
+        android:layout_width="230dp"
+        android:layout_height="101dp"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="212dp"
         android:text="Zu den Wlan Einstellungen"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,36 +18,52 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="369dp"
-        android:layout_height="219dp"
+        android:layout_width="391dp"
+        android:layout_height="194dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="352dp"
         android:text="Der erste Schritt der App wäre ein Wlan verbindung herzustellen falls dies schon der fall ist können sie diese Seite überspringen. \n\nWenn sie noch nicht mit dem Bachmann Wlan &quot;BMDATA-WLAN&quot; verbunden sind drücken sie auf den unteren Knopf um zu den Einstellungen zu gelangen und verbinden sie sich mit diesem."
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="121dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView12"
         android:layout_width="309dp"
-        android:layout_height="33dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="21dp"
         android:text="Wlan Verbindung herstellen:"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="67dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
         android:text="Einführung Überspringen"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="128dp"
-        android:layout_height="23dp"
+        android:layout_width="129dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:text="Nächster Schritt"
         android:textSize="16sp"
-        tools:layout_editor_absoluteX="267dp"
-        tools:layout_editor_absoluteY="692dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 </androidx.constraintlayout.widget.ConstraintLayout>
