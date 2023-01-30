@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView11"
+        tools:layout_editor_absoluteX="240dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Einführung Überspringen" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="309dp"
+        android:layout_height="33dp"
+        android:text="Schlüssel Scan durchführen:"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="67dp" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="370dp"
+        android:layout_height="231dp"
+        android:text="Um einen Schlüssel zu scannen und somit auch jemanden abzuhaken &quot;finden&quot; muss man auf der Schlüssel scannen Seiten den Knopf drücken und dann den Mitarbeiter Schlüssel an die rückseite des Handys halten bis ein Haken kommt danach könnte man auch noch andere Schlüssel scannen.\n\nWenn man alle gegebenen Schlüssel gescannt hat gehts zum nächsten Schritt."
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="27dp"
+        tools:layout_editor_absoluteY="131dp" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="128dp"
+        android:layout_height="23dp"
+        android:text="Nächster Schritt"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="267dp"
+        tools:layout_editor_absoluteY="692dp" />
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="128dp"
+        android:layout_height="23dp"
+        android:text="Vorheriger Schritt"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="692dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
