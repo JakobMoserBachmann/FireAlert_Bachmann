@@ -1,50 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="370dp"
-        android:layout_height="231dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="268dp"
         android:text="Auf der gefundenen Mitarbeiter Seite sieht man alle Mitarbeiter wo abgehakt wurden.\n\nBei jedem Mitarbeiter steht sein jeweiliges Kürzel und der  Zeitpunkt wo er abgehakt &quot;gefunden&quot; wurde."
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="193dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView26"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
     <TextView
         android:id="@+id/textView26"
-        tools:layout_editor_absoluteX="267dp"
-        tools:layout_editor_absoluteY="692dp"
-        android:layout_width="128dp"
-        android:layout_height="23dp"
+        android:layout_width="137dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:text="Nächster Schritt"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView27"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
     <TextView
         android:id="@+id/textView27"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="692dp"
-        android:layout_width="128dp"
-        android:layout_height="23dp"
+        android:layout_width="134dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="16dp"
         android:text="Vorheriger Schritt"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView29" />
 
     <TextView
         android:id="@+id/textView28"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Einführung Überspringen" />
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Einführung Überspringen"
+        app:layout_constraintBottom_toTopOf="@+id/textView29"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView29"
-        android:layout_width="321dp"
-        android:layout_height="87dp"
+        android:layout_width="322dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginBottom="554dp"
         android:text="Gefundene Mitarbeiter Seite:"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="51dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView27"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
