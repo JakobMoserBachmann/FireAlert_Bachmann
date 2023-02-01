@@ -5,11 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentTutorialPage3Binding;
 
@@ -18,6 +16,7 @@ public class TutorialFragmentPage3 extends Fragment
     private FragmentTutorialPage3Binding binding;
     TextView textviewNextStep;
     TextView textViewPreviousStep;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState)
     {

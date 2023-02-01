@@ -61,7 +61,7 @@ public class QRScanFragment extends Fragment {
 
             }
             //Messagebox
-            builder.setMessage("QR-Code wurde erfolgreich gescannt.");
+            builder.setMessage("Scan Erfolgreich beendet");
 
             String[] peopleArray = LZSEncoding.decompress(result.getContents()).split(";");
             for (String people: peopleArray) {

@@ -47,5 +47,4 @@ public class Person {
     public void setUhrzeit(String uhrzeit) {
         Uhrzeit = uhrzeit;
     }
-
 }

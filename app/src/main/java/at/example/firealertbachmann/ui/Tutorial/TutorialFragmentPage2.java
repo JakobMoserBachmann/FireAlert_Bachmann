@@ -1,16 +1,13 @@
 package at.example.firealertbachmann.ui.Tutorial;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentTutorialPage2Binding;
 
@@ -45,9 +42,6 @@ public class TutorialFragmentPage2 extends Fragment
                         .navigate(R.id.action_nav_TutorialPage2_to_nav_TutorialPage1);
             }
         });
-
-
-
         return root;
     }
 }

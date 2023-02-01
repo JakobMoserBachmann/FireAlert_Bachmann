@@ -91,7 +91,6 @@ public class MissingPeopleFragment extends Fragment {
     public void CreateListView()
     {
         peopleListView = (ListView) binding.getRoot().findViewById(R.id.missingPeopleList);
-
         adapter = new MissingPeopleAdapter((ArrayList<Person>) peopleListService.getMissingPeople(), getContext());
         peopleListView.setAdapter(adapter);
 

@@ -46,17 +46,11 @@ public class NfcScanFragment extends Fragment {
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         boolean showTutorial = sharedPref.getBoolean("SHOW_AGAIN", true);
 
-
         if(showTutorial == true && onetimeshow == false){
             // anderes Fragment anzeigen
-            Log.v("test", "I am here");
             NavHostFragment.findNavController(this).navigate(R.id.nav_TutorialPage1);
-            Log.v("test", "I am here11");
             onetimeshow = true;
         }
-
-        Log.v("test", "I am here22");
-
 
         View root = binding.getRoot();
         progressbar = root.findViewById(R.id.progressBar);
@@ -111,7 +105,6 @@ public class NfcScanFragment extends Fragment {
                 String keyNumber = new String(bytes); // Das hier ist die gesuchte Schlüsselnummer
 
                 String KeyNumberShort = keyNumber.substring(keyNumber.length() - 6);
-                Log.v("KeyNumber---------->", KeyNumberShort);
 
                 //Add Scanned Person to Found People
                 peopleListService.foundPerson(peopleListService.getPersonByKeyNumber(KeyNumberShort));
