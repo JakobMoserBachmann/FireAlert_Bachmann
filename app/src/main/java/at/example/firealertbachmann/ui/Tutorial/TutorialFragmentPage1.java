@@ -35,7 +35,7 @@ public class TutorialFragmentPage1 extends Fragment
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         boolean showTutorial = sharedPref.getBoolean("SHOW_AGAIN", true);
 
-        if(showTutorial == false){
+        if(showTutorial == true){
             // anderes Fragment anzeigen
             NavHostFragment.findNavController(this).navigate(R.id.nav_NfcScanFragment);
         }
