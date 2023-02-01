@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_NfcScanFragment">
+    app:startDestination="@+id/nav_TutorialPage1">
 
     <fragment
         android:id="@+id/nav_NfcScanFragment"
@@ -28,6 +28,38 @@
         android:name="QRCodeScan.QRScanFragment"
         android:label="@string/menu_foundpeople"
         tools:layout="@layout/fragment_qrscan" />
+
+    <fragment
+        android:id="@+id/nav_TutorialPage1"
+        android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFragmentPage1"
+        android:label="@string/menu_nfcscan"
+        tools:layout="@layout/fragment_tutorial_page1" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_TutorialPage2"
+        android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFragmentPage2"
+        android:label="@string/menu_nfcscan"
+        tools:layout="@layout/fragment_tutorial_page2" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_TutorialPage3"
+        android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFrgamentPage3"
+        android:label="@string/menu_nfcscan"
+        tools:layout="@layout/fragment_tutorial_page3" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_TutorialPage4"
+        android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFragmentPage4"
+        android:label="@string/menu_nfcscan"
+        tools:layout="@layout/fragment_tutorial_page4" >
+
+    </fragment>
 
 
 </navigation>

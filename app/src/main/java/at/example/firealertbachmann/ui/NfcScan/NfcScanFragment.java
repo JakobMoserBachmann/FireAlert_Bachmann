@@ -30,9 +30,7 @@ public class NfcScanFragment extends Fragment {
     // variables & components
     PersonListService peopleListService = PersonListService.getInstance();
     private FragmentNfcscanBinding binding;
-    NfcAdapter nfcAdapter;
     CheckView check;
-    Button button;
     ProgressBar progressbar;
     Integer btnCount = 0;
 
@@ -40,11 +38,11 @@ public class NfcScanFragment extends Fragment {
                              ViewGroup container,Bundle savedInstanceState) {
 
         binding = FragmentNfcscanBinding.inflate(inflater, container, false);
-        nfcAdapter = NfcAdapter.getDefaultAdapter(this.getContext());
+        NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this.getContext());
 
         View root = binding.getRoot();
         progressbar = root.findViewById(R.id.progressBar);
-        button = root.findViewById(R.id.nfc_scan_button);
+        Button button = root.findViewById(R.id.nfc_scan_button);
         check = root.findViewById(R.id.check);
 
         progressbar.setVisibility(View. INVISIBLE);
