@@ -13,7 +13,6 @@ import androidx.fragment.app.Fragment;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentMissingpeopleBinding;
 
