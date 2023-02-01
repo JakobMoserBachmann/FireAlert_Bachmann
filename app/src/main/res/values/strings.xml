@@ -14,10 +14,10 @@
     <string name="string_nextStep">Nächster Schritt</string>
     <string name="string_dontShowAgain">Nicht mehr anzeigen</string>
     <string name="tutorialPage2Header">Schlüssel Scan durchführen:</string>
-    <string name="tutorialPage2Desc">Um einen Schlüssel zu scannen und somit auch jemanden abzuhaken \"finden\" muss man auf der Schlüssel scannen Seiten den Knopf drücken und dann den Mitarbeiter Schlüssel an die rückseite des Handys halten bis ein Haken kommt danach könnte man auch noch andere Schlüssel scannen.\n\nWenn man alle gegebenen Schlüssel gescannt hat gehts zum nächsten Schritt.</string>
+    <string name="tutorialPage2Desc">Um einen Mitarbeiter als in Sicherheit abzuhaken, muss auf die "Schlüssel Scannen" Seite gewechselt werden, dort muss der Knopf "Schlüssel Scannen" gedrückt und der Schlüsselchip an die Hinterseite das Smartphone gehalten werden.</string>
     <string name="string_PreviousStep">Vorheriger Schritt</string>
     <string name="tutorialPage3Header">Vermisste Personen händisch abhaken:</string>
-    <string name="tutorialPage3Desc">Wenn alle Schlüssel gescannt wurden geht man auf die Vermisste Personen Seite, dort sieht man die übergeblieben Mitarbeit die noch nicht aus der Firma geflohen sind. \n\nFalls aber jemand Krank an diesem Tag ist dann kann man diesen MItarbeiter oben im Suchfeld mit dem Kürzel suchen und händisch auswählen und unten per Knopfdruck abhaken \"finden\".</string>
-    <string name="tutorialPage4Desc">Auf der gefundenen Mitarbeiter Seite sieht man alle Mitarbeiter wo abgehakt wurden.\n\nBei jedem Mitarbeiter steht sein jeweiliges Kürzel und der Zeitpunkt wo er abgehakt \"gefunden\" wurde.</string>
+    <string name="tutorialPage3Desc">Wenn alle Mitarbeiter Schlüsselchips gescannt sind, kann man zur Seite "Vermiste Mitarbeiter" wechseln, dort können jene Mitarbeiter eingesehen und als Sicher abgehakt werden, die nicht gescannt wurden.\n\nOben auf der Lupe können Mitarbeiter nach dem Kürzel gesucht werden.</string>
+    <string name="tutorialPage4Desc">Bei der Seite "Gefundene Mitarbeiter" können die Mitarbeiter die gescannt wurden, einsehen.\n\nBei jedem gefundenen Mitarbeiter steht die Uhrzeit der Scannung und das jeweilige Kürzel des Mitarbeiters.</string>
     <string name="tutorialPage4Header">Gefundene Mitarbeiter Seite:</string>
 </resources>
