@@ -6,44 +6,31 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="31dp"
-        android:text="Einführung Überspringen"
-        app:layout_constraintBottom_toTopOf="@+id/textView16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/textView16"
         android:layout_width="401dp"
         android:layout_height="35dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="25dp"
-        android:text="Schlüssel Scan durchführen:"
+        android:text="@string/tutorialPage2Header"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView17"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="401dp"
-        android:layout_height="311dp"
+        android:layout_width="398dp"
+        android:layout_height="366dp"
         android:layout_marginStart="3dp"
         android:layout_marginEnd="3dp"
-        android:layout_marginBottom="245dp"
-        android:text="Um einen Schlüssel zu scannen und somit auch jemanden abzuhaken &quot;finden&quot; muss man auf der Schlüssel scannen Seiten den Knopf drücken und dann den Mitarbeiter Schlüssel an die rückseite des Handys halten bis ein Haken kommt danach könnte man auch noch andere Schlüssel scannen.\n\nWenn man alle gegebenen Schlüssel gescannt hat gehts zum nächsten Schritt."
+        android:layout_marginBottom="197dp"
+        android:text="@string/tutorialPage2Desc"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tutorialPage2PreviousStep"
+        app:layout_constraintBottom_toTopOf="@+id/tutorialPage2NextStep"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tutorialPage2NextStep"
@@ -51,7 +38,7 @@
         android:layout_height="28dp"
         android:layout_marginEnd="7dp"
         android:layout_marginBottom="28dp"
-        android:text="Nächster Schritt"
+        android:text="@string/string_nextStep"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +51,7 @@
         android:layout_height="28dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="28dp"
-        android:text="Vorheriger Schritt"
+        android:text="@string/string_PreviousStep"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

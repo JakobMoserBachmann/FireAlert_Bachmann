@@ -12,4 +12,12 @@
     <string name="tutorialPage1Header">Wlan Verbindung herstellen:</string>
     <string name="string_skip">Einführung Überspringen</string>
     <string name="string_nextStep">Nächster Schritt</string>
+    <string name="string_dontShowAgain">Nicht mehr anzeigen</string>
+    <string name="tutorialPage2Header">Schlüssel Scan durchführen:</string>
+    <string name="tutorialPage2Desc">Um einen Schlüssel zu scannen und somit auch jemanden abzuhaken \"finden\" muss man auf der Schlüssel scannen Seiten den Knopf drücken und dann den Mitarbeiter Schlüssel an die rückseite des Handys halten bis ein Haken kommt danach könnte man auch noch andere Schlüssel scannen.\n\nWenn man alle gegebenen Schlüssel gescannt hat gehts zum nächsten Schritt.</string>
+    <string name="string_PreviousStep">Vorheriger Schritt</string>
+    <string name="tutorialPage3Header">Vermisste Personen händisch abhaken:</string>
+    <string name="tutorialPage3Desc">Wenn alle Schlüssel gescannt wurden geht man auf die Vermisste Personen Seite, dort sieht man die übergeblieben Mitarbeit die noch nicht aus der Firma geflohen sind. \n\nFalls aber jemand Krank an diesem Tag ist dann kann man diesen MItarbeiter oben im Suchfeld mit dem Kürzel suchen und händisch auswählen und unten per Knopfdruck abhaken \"finden\".</string>
+    <string name="tutorialPage4Desc">Auf der gefundenen Mitarbeiter Seite sieht man alle Mitarbeiter wo abgehakt wurden.\n\nBei jedem Mitarbeiter steht sein jeweiliges Kürzel und der Zeitpunkt wo er abgehakt \"gefunden\" wurde.</string>
+    <string name="tutorialPage4Header">Gefundene Mitarbeiter Seite:</string>
 </resources>
