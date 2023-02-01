@@ -1,6 +1,8 @@
 package at.example.firealertbachmann.ui.NfcScan;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.MifareClassic;
@@ -33,12 +35,28 @@ public class NfcScanFragment extends Fragment {
     CheckView check;
     ProgressBar progressbar;
     Integer btnCount = 0;
+    static boolean onetimeshow = false;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container,Bundle savedInstanceState) {
 
         binding = FragmentNfcscanBinding.inflate(inflater, container, false);
         NfcAdapter nfcAdapter = NfcAdapter.getDefaultAdapter(this.getContext());
+
+        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
+        boolean showTutorial = sharedPref.getBoolean("SHOW_AGAIN", true);
+
+
+        if(showTutorial == true && onetimeshow == false){
+            // anderes Fragment anzeigen
+            Log.v("test", "I am here");
+            NavHostFragment.findNavController(this).navigate(R.id.nav_TutorialPage1);
+            Log.v("test", "I am here11");
+            onetimeshow = true;
+        }
+
+        Log.v("test", "I am here22");
+
 
         View root = binding.getRoot();
         progressbar = root.findViewById(R.id.progressBar);

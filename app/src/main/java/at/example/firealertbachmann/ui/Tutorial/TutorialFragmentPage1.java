@@ -32,17 +32,13 @@ public class TutorialFragmentPage1 extends Fragment
 
         View root = binding.getRoot();
 
-        SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
-        boolean showTutorial = sharedPref.getBoolean("SHOW_AGAIN", true);
 
-        if(showTutorial == true){
-            // anderes Fragment anzeigen
-            NavHostFragment.findNavController(this).navigate(R.id.nav_NfcScanFragment);
-        }
+
 
         checkBox = root.findViewById(R.id.dontShowAgain);
 
         checkBox.setOnClickListener(view ->{
+            SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putBoolean("SHOW_AGAIN", false);
             editor.apply();
