@@ -7,14 +7,14 @@
 
     <TextView
         android:id="@+id/textView25"
-        android:layout_width="404dp"
-        android:layout_height="311dp"
+        android:layout_width="396dp"
+        android:layout_height="374dp"
         android:layout_marginStart="11dp"
         android:layout_marginEnd="11dp"
         android:layout_marginBottom="214dp"
         android:text="Auf der gefundenen Mitarbeiter Seite sieht man alle Mitarbeiter wo abgehakt wurden.\n\nBei jedem Mitarbeiter steht sein jeweiliges Kürzel und der  Zeitpunkt wo er abgehakt &quot;gefunden&quot; wurde."
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/tutorialPag4NextStep"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView29" />
@@ -57,15 +57,15 @@
 
     <TextView
         android:id="@+id/textView29"
-        android:layout_width="323dp"
-        android:layout_height="29dp"
+        android:layout_width="400dp"
+        android:layout_height="39dp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="25dp"
         android:text="Gefundene Mitarbeiter Seite:"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/tutorialPage4PreviousStep"
+        app:layout_constraintBottom_toTopOf="@+id/textView25"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView28" />
 </androidx.constraintlayout.widget.ConstraintLayout>
