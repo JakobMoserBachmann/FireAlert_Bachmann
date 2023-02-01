@@ -10,7 +10,7 @@
         android:layout_width="230dp"
         android:layout_height="101dp"
         android:layout_marginEnd="88dp"
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="212dp"
         android:text="@string/tutorialPage1ButtonText"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -18,11 +18,11 @@
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="404dp"
-        android:layout_height="311dp"
-        android:layout_marginStart="11dp"
-        android:layout_marginEnd="11dp"
-        android:layout_marginBottom="214dp"
+        android:layout_width="385dp"
+        android:layout_height="249dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="352dp"
         android:text="@string/tutorialPage1Desc"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/tutorialPage1NextStep"
@@ -32,24 +32,22 @@
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="339dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="21dp"
         android:text="@string/tutorialPage1Header"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tutorialPage1Skip" />
+        app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
-        android:id="@+id/tutorialPage1Skip"
+        android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="44dp"
         android:layout_marginBottom="32dp"
         android:text="@string/string_skip"
         app:layout_constraintBottom_toTopOf="@+id/textView12"
@@ -58,16 +56,27 @@
 
     <TextView
         android:id="@+id/tutorialPage1NextStep"
-        android:layout_width="139dp"
-        android:layout_height="28dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="32dp"
-        android:onClick="NextStep"
+        android:layout_width="129dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="OnClickNextStep"
         android:text="@string/string_nextStep"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <CheckBox
+        android:id="@+id/dontShowAgain"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="196dp"
+        android:layout_marginBottom="16dp"
+        android:text="Nicht mehr anzeigen"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
