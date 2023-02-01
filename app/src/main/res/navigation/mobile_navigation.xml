@@ -35,6 +35,9 @@
         android:label="@string/menu_nfcscan"
         tools:layout="@layout/fragment_tutorial_page1" >
 
+        <action
+            android:id="@+id/action_nav_TutorialPage1_to_nav_TutorialPage2"
+            app:destination="@id/nav_TutorialPage2" />
     </fragment>
 
     <fragment
@@ -43,14 +46,26 @@
         android:label="@string/menu_nfcscan"
         tools:layout="@layout/fragment_tutorial_page2" >
 
+        <action
+            android:id="@+id/action_nav_TutorialPage2_to_nav_TutorialPage3"
+            app:destination="@id/nav_TutorialPage3" />
+        <action
+            android:id="@+id/action_nav_TutorialPage2_to_nav_TutorialPage1"
+            app:destination="@id/nav_TutorialPage1" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_TutorialPage3"
-        android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFrgamentPage3"
+        android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFragmentPage3"
         android:label="@string/menu_nfcscan"
         tools:layout="@layout/fragment_tutorial_page3" >
 
+        <action
+            android:id="@+id/action_nav_TutorialPage3_to_nav_TutorialPage4"
+            app:destination="@id/nav_TutorialPage4" />
+        <action
+            android:id="@+id/action_nav_TutorialPage3_to_nav_TutorialPage2"
+            app:destination="@id/nav_TutorialPage2" />
     </fragment>
 
     <fragment
@@ -59,6 +74,12 @@
         android:label="@string/menu_nfcscan"
         tools:layout="@layout/fragment_tutorial_page4" >
 
+        <action
+            android:id="@+id/action_nav_TutorialPage4_to_nav_NfcScanFragment"
+            app:destination="@id/nav_NfcScanFragment" />
+        <action
+            android:id="@+id/action_nav_TutorialPage4_to_nav_TutorialPage3"
+            app:destination="@id/nav_TutorialPage3" />
     </fragment>
 
 
