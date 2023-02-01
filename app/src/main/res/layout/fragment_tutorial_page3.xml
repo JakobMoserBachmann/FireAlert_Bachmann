@@ -6,55 +6,53 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView20"
-        android:layout_width="119dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/tutorialPage3NextStep"
+        android:layout_width="139dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="28dp"
         android:text="Nächster Schritt"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView22"
-        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tutorialPage3PreviousStep" />
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="321dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginBottom="554dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="25dp"
         android:text="Vermisste Personen händisch abhaken:"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView22"
+        app:layout_constraintBottom_toTopOf="@+id/textView23"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
     <TextView
-        android:id="@+id/textView22"
-        android:layout_width="153dp"
-        android:layout_height="21dp"
+        android:id="@+id/tutorialPage3PreviousStep"
+        android:layout_width="139dp"
+        android:layout_height="28dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="123dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="28dp"
         android:text="Vorheriger Schritt"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView20"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView23"
-        android:layout_width="382dp"
-        android:layout_height="227dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="285dp"
+        android:layout_width="404dp"
+        android:layout_height="311dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="214dp"
         android:text="Wenn alle Schlüssel gescannt wurden geht man auf die Vermisste Personen Seite, dort sieht man die übergeblieben Mitarbeit die noch nicht aus der Firma geflohen sind. \n\nFalls aber jemand Krank an diesem Tag ist  dann kann man diesen MItarbeiter oben im Suchfeld mit dem Kürzel suchen und händisch auswählen und unten per Knopfdruck abhaken &quot;finden&quot;."
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView20"
+        app:layout_constraintBottom_toTopOf="@+id/tutorialPage3PreviousStep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
@@ -65,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="31dp"
         android:text="Einführung Überspringen"
         app:layout_constraintBottom_toTopOf="@+id/textView21"
         app:layout_constraintEnd_toEndOf="parent"

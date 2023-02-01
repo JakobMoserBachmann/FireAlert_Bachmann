@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="31dp"
         android:text="Einführung Überspringen"
         app:layout_constraintBottom_toTopOf="@+id/textView16"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,53 +19,53 @@
 
     <TextView
         android:id="@+id/textView16"
-        android:layout_width="309dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="31dp"
+        android:layout_width="401dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="25dp"
         android:text="Schlüssel Scan durchführen:"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <TextView
         android:id="@+id/textView17"
-        android:layout_width="384dp"
-        android:layout_height="230dp"
-        android:layout_marginStart="14dp"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="330dp"
+        android:layout_width="401dp"
+        android:layout_height="311dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="245dp"
         android:text="Um einen Schlüssel zu scannen und somit auch jemanden abzuhaken &quot;finden&quot; muss man auf der Schlüssel scannen Seiten den Knopf drücken und dann den Mitarbeiter Schlüssel an die rückseite des Handys halten bis ein Haken kommt danach könnte man auch noch andere Schlüssel scannen.\n\nWenn man alle gegebenen Schlüssel gescannt hat gehts zum nächsten Schritt."
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
+        app:layout_constraintBottom_toTopOf="@+id/tutorialPage2PreviousStep"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
-        android:id="@+id/textView18"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/tutorialPage2NextStep"
+        android:layout_width="139dp"
+        android:layout_height="28dp"
+        android:layout_marginEnd="7dp"
+        android:layout_marginBottom="28dp"
         android:text="Nächster Schritt"
         android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView19"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView19"
-        app:layout_constraintTop_toTopOf="@+id/textView19" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tutorialPage2PreviousStep" />
 
     <TextView
-        android:id="@+id/textView19"
-        android:layout_width="127dp"
-        android:layout_height="18dp"
+        android:id="@+id/tutorialPage2PreviousStep"
+        android:layout_width="139dp"
+        android:layout_height="28dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="123dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="28dp"
         android:text="Vorheriger Schritt"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView18"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
