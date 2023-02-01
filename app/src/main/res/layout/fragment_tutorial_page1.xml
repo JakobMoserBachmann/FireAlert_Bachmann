@@ -6,38 +6,37 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonTutorial"
         android:layout_width="230dp"
         android:layout_height="101dp"
         android:layout_marginEnd="88dp"
         android:layout_marginBottom="212dp"
-        android:text="Zu den Wlan Einstellungen"
+        android:text="@string/tutorialPage1ButtonText"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/textView13"
-        android:layout_width="391dp"
-        android:layout_height="194dp"
+        android:layout_width="385dp"
+        android:layout_height="249dp"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="352dp"
-        android:text="Der erste Schritt der App wäre ein Wlan verbindung herzustellen falls dies schon der fall ist können sie diese Seite überspringen. \n\nWenn sie noch nicht mit dem Bachmann Wlan &quot;BMDATA-WLAN&quot; verbunden sind drücken sie auf den unteren Knopf um zu den Einstellungen zu gelangen und verbinden sie sich mit diesem."
+        android:text="@string/tutorialPage1Desc"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView15"
+        app:layout_constraintBottom_toTopOf="@+id/tutorialPage1NextStep"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="309dp"
-        android:layout_height="0dp"
+        android:layout_width="339dp"
+        android:layout_height="30dp"
         android:layout_marginStart="16dp"
         android:layout_marginBottom="21dp"
-        android:text="Wlan Verbindung herstellen:"
+        android:text="@string/tutorialPage1Header"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView13"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,18 +49,19 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
-        android:text="Einführung Überspringen"
+        android:text="@string/string_skip"
         app:layout_constraintBottom_toTopOf="@+id/textView12"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/tutorialPage1NextStep"
         android:layout_width="129dp"
         android:layout_height="22dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:text="Nächster Schritt"
+        android:onClick="OnClickNextStep"
+        android:text="@string/string_nextStep"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -7,4 +7,9 @@
     <string name="menu_QR">QR-Code Scannen</string>
 
     <string name="snackbar_button">Go to Missing list of People</string>
+    <string name="tutorialPage1ButtonText">Zu den Wlan Einstellungen</string>
+    <string name="tutorialPage1Desc">Der erste Schritt der App wäre ein Wlan verbindung herzustellen falls dies schon der fall ist können sie diese Seite überspringen. \n\nWenn sie noch nicht mit dem Bachmann Wlan \"BMDATA-WLAN\" verbunden sind drücken sie auf den unteren Knopf um zu den Einstellungen zu gelangen und verbinden sie sich mit diesem.</string>
+    <string name="tutorialPage1Header">Wlan Verbindung herstellen:</string>
+    <string name="string_skip">Einführung Überspringen</string>
+    <string name="string_nextStep">Nächster Schritt</string>
 </resources>
