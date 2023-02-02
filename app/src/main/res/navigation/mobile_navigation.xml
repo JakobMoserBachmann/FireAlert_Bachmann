@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/nav_TutorialPage1"
         android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFragmentPage1"
-        android:label="@string/menu_nfcscan"
+        android:label="@string/menu_tutorial"
         tools:layout="@layout/fragment_tutorial_page1" >
 
         <action
@@ -43,7 +43,7 @@
     <fragment
         android:id="@+id/nav_TutorialPage2"
         android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFragmentPage2"
-        android:label="@string/menu_nfcscan"
+        android:label="@string/menu_tutorial"
         tools:layout="@layout/fragment_tutorial_page2" >
 
         <action
@@ -57,7 +57,7 @@
     <fragment
         android:id="@+id/nav_TutorialPage3"
         android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFragmentPage3"
-        android:label="@string/menu_nfcscan"
+        android:label="@string/menu_tutorial"
         tools:layout="@layout/fragment_tutorial_page3" >
 
         <action
@@ -71,7 +71,7 @@
     <fragment
         android:id="@+id/nav_TutorialPage4"
         android:name="at.example.firealertbachmann.ui.Tutorial.TutorialFragmentPage4"
-        android:label="@string/menu_nfcscan"
+        android:label="@string/menu_tutorial"
         tools:layout="@layout/fragment_tutorial_page4" >
 
         <action

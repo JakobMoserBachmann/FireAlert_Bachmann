@@ -6,6 +6,8 @@ import android.content.IntentFilter;
 import android.nfc.NfcAdapter;
 import android.nfc.tech.MifareClassic;
 import android.os.Bundle;
+import android.view.Menu;
+
 import at.example.firealertbachmann.databinding.ActivityMainBinding;
 import at.example.firealertbachmann.ui.NfcScan.NfcScanFragment;
 import com.google.android.material.navigation.NavigationView;
@@ -100,6 +102,13 @@ public class MainActivity extends AppCompatActivity {
         if (nfcAdapter != null) {
             nfcAdapter.enableForegroundDispatch(this, pendingIntent, intentFiltersArray, techListsArray);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
     @Override
