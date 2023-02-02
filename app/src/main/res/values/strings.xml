@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">FireAlertBachmann</string>
     <string name="menu_nfcscan">Schlüssel Scannen</string>
+    <string name="menu_tutorial">Einführung</string>
     <string name="menu_peoplelist">Vermisste Mitarbeiter</string>
     <string name="menu_missingpeople">Vermisste Mitarbeiter</string>
     <string name="menu_foundpeople">Gefundene Mitarbeiter</string>
