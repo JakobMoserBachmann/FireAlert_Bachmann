@@ -21,6 +21,9 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.snackbar.Snackbar;
 import java.io.IOException;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
 import at.example.firealertbachmann.MainActivity;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentNfcscanBinding;
@@ -94,7 +97,6 @@ public class NfcScanFragment extends Fragment {
     public void processNFC(Intent intent)
     {
         Tag tagFromIntent = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
-
         MifareClassic mifareClassic = MifareClassic.get(tagFromIntent);
 
         if (mifareClassic != null) {
@@ -106,24 +108,34 @@ public class NfcScanFragment extends Fragment {
 
                 String KeyNumberShort = keyNumber.substring(keyNumber.length() - 6);
 
-                //Add Scanned Person to Found People
-                peopleListService.foundPerson(peopleListService.getPersonByKeyNumber(KeyNumberShort));
-
-            } catch (IOException e) {
+                if (peopleListService.getPersonByKeyNumber(KeyNumberShort) != null)
+                {
+                    //Add Scanned Person to Found People
+                    peopleListService.foundPerson(peopleListService.getPersonByKeyNumber(KeyNumberShort));
+                    //NFC FOUND
+                    setCheckGIF();
+                    //GIF Timer
+                    Handler handler = new Handler(Looper.getMainLooper()) {
+                        @Override
+                        public void handleMessage(Message msg) {
+                            if (msg.what == 1) {
+                                setProgressGIF();
+                            }
+                        }
+                    };
+                    handler.sendEmptyMessageDelayed(1, 1000);
+                }
+                else
+                {
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(R.id.nav_NfcScanFragment), "Der gescannte Schlüssel wurde nicht gefunden.", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+            }
+            catch (IOException e)
+            {
                 e.printStackTrace();
             }
-            //NFC FOUND
-            setCheckGIF();
-            //GIF Timer
-            Handler handler = new Handler(Looper.getMainLooper()) {
-                @Override
-                public void handleMessage(Message msg) {
-                    if (msg.what == 1) {
-                        setProgressGIF();
-                    }
-                }
-            };
-            handler.sendEmptyMessageDelayed(1, 1000);
+
         }
     }
 
@@ -162,7 +174,8 @@ public class NfcScanFragment extends Fragment {
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroyView()
+    {
         super.onDestroyView();
         binding = null;
     }
