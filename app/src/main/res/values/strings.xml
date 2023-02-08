@@ -6,6 +6,7 @@
     <string name="menu_missingpeople">Vermisste Mitarbeiter</string>
     <string name="menu_foundpeople">Gefundene Mitarbeiter</string>
     <string name="menu_QR">QR-Code Scannen</string>
+    <string name="menu_Settings">Optionen</string>
 
     <string name="snackbar_button">Go to Missing list of People</string>
     <string name="tutorialPage1ButtonText">Zu den Wlan Einstellungen</string>

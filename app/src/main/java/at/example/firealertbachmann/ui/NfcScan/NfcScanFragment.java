@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.util.Log;
+import android.provider.Settings;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,9 +21,6 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import com.google.android.material.snackbar.Snackbar;
 import java.io.IOException;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
 import at.example.firealertbachmann.MainActivity;
 import at.example.firealertbachmann.R;
 import at.example.firealertbachmann.databinding.FragmentNfcscanBinding;
@@ -32,7 +29,6 @@ import cdflynn.android.library.checkview.CheckView;
 
 public class NfcScanFragment extends Fragment {
 
-    // variables & components
     PersonListService peopleListService = PersonListService.getInstance();
     private FragmentNfcscanBinding binding;
     CheckView check;
@@ -57,6 +53,7 @@ public class NfcScanFragment extends Fragment {
 
         View root = binding.getRoot();
         progressbar = root.findViewById(R.id.progressBar);
+
         Button button = root.findViewById(R.id.nfc_scan_button);
         check = root.findViewById(R.id.check);
 
@@ -127,7 +124,8 @@ public class NfcScanFragment extends Fragment {
                 }
                 else
                 {
-                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(R.id.nav_NfcScanFragment), "Der gescannte Schlüssel wurde nicht gefunden.", Snackbar.LENGTH_LONG);
+                    Snackbar snackbar = Snackbar.make(getActivity().findViewById(R.id.nav_NfcScanFragment),
+                            "Der gescannte Schlüssel wurde nicht gefunden.", Snackbar.LENGTH_LONG);
                     snackbar.show();
                 }
             }
@@ -135,7 +133,6 @@ public class NfcScanFragment extends Fragment {
             {
                 e.printStackTrace();
             }
-
         }
     }
 

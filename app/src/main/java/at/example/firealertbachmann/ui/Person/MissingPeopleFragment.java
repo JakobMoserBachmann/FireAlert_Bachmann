@@ -27,6 +27,7 @@ public class MissingPeopleFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         //peopleListService.SetBackPeople();
         binding = FragmentMissingpeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

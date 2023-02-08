@@ -11,15 +11,20 @@
             android:title="@string/menu_nfcscan" />
         <item
             android:id="@+id/nav_MissingPeopleFragment"
-            android:icon="@drawable/ic_missingpeoplelist"
+            android:icon="@drawable/ic_foundpeoplelist"
             android:title="@string/menu_missingpeople" />
         <item
             android:id="@+id/nav_FoundPersonFragment"
-            android:icon="@drawable/ic_foundpeoplelist"
+            android:icon="@drawable/ic_missingpeoplelist"
             android:title="@string/menu_foundpeople" />
         <item
             android:id="@+id/nav_QRScanFragment"
             android:icon="@drawable/ic_qrscanner"
             android:title="@string/menu_QR" />
+        <item
+            android:id="@+id/nav_TutorialPage1"
+            android:icon="@drawable/ic_tutorial_foreground"
+            android:title="Einführung"
+            />
     </group>
 </menu>

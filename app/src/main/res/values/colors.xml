@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#555555</color>
-    <color name="purple_500">#555555</color>
-    <color name="purple_700">#555555</color>
-    <color name="teal_200">#555555</color>
-    <color name="teal_700">#555555</color>
-
+    <color name="grey">#555555</color>
 
     <color name="bachmann_primary">#F2D600</color>
     <color name="bachmann_secondary">#555555</color>
