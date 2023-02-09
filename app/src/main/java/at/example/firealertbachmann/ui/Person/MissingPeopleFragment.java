@@ -32,7 +32,7 @@ public class MissingPeopleFragment extends Fragment {
         binding = FragmentMissingpeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         button = root.findViewById(R.id.buttonCheckPeople);
-        CreateListView();
+        createListView();
 
         peopleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -56,7 +56,7 @@ public class MissingPeopleFragment extends Fragment {
                     peopleListService.foundPerson(person);
                 }
             }
-            CreateListView();
+            createListView();
         });
 
         searchView = root.findViewById(R.id.simpleSearchView);
@@ -69,14 +69,14 @@ public class MissingPeopleFragment extends Fragment {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                CreateListView(searchView.getQuery().toString());
+                createListView(searchView.getQuery().toString());
                 return false;
             }
         });
         return root;
     }
 
-    public void CreateListView(String filterText)
+    public void createListView(String filterText)
     {
         peopleListView = (ListView) binding.getRoot().findViewById(R.id.missingPeopleList);
         List<Person> filteredPerson = peopleListService.getMissingPeople()
@@ -89,7 +89,7 @@ public class MissingPeopleFragment extends Fragment {
         adapter.notifyDataSetChanged();
     }
 
-    public void CreateListView()
+    public void createListView()
     {
         peopleListView = (ListView) binding.getRoot().findViewById(R.id.missingPeopleList);
         adapter = new MissingPeopleAdapter((ArrayList<Person>) peopleListService.getMissingPeople(), getContext());
