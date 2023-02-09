@@ -45,7 +45,7 @@ public class NfcScanFragment extends Fragment {
         SharedPreferences sharedPref = getActivity().getPreferences(Context.MODE_PRIVATE);
         boolean showTutorial = sharedPref.getBoolean("SHOW_AGAIN", true);
 
-        if(showTutorial == true && onetimeshow == false){
+        if(showTutorial && !onetimeshow){
             // anderes Fragment anzeigen
             NavHostFragment.findNavController(this).navigate(R.id.nav_TutorialPage1);
             onetimeshow = true;

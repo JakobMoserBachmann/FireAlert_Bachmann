@@ -21,12 +21,12 @@ public class FoundPeopleFragment extends Fragment {
 
         binding = FragmentFoundpeopleBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        CreateListView();
+        createListView();
 
         return root;
     }
 
-    public void CreateListView()
+    public void createListView()
     {
         ListView peopleListView = binding.getRoot().findViewById(R.id.foundPeopleList);
         FoundPeopleAdapter adapter = new FoundPeopleAdapter((ArrayList<Person>) peopleListService.getFoundPeople(), getContext());
